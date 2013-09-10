@@ -2,27 +2,34 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
+  <title ng-bind="$state.current.name + ' - ui-router'">My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
   <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
+    <li><a ui-sref="home">Home</a></li>
+    <li><a ui-sref="contacts">Contacts</a></li>
+    <li><a ui-sref="contacts.detail({contactId: 1})">Detail</a></li>
   </ul>
 
-  <div ng-view></div>
+  <div>Angular ui-router app</div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div ui-view class="container" style="margin-top:60px"></div>
 
+  <hr>
+  <pre>
+    <!-- Here's some values to keep an eye on in the sample in order to understand $state and $stateParams -->
+    $state = {{$state.current.name}}
+    $stateParams = {{$stateParams}}
+    $state full url = {{ $state.$current.url.source }}
+    <!-- $state.$current is not a public api, we are using it to
+         display the full url for learning purposes-->
+  </pre>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-ui-router.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
 </body>
 </html>
