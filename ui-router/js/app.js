@@ -18,22 +18,26 @@ angular.module('myApp', ['ui.router'])
 
             $urlRouterProvider
                 // .when('/c?id', '/contacts/:id')
-                // .when('/user/:id', '/contacts/:id')
+                // .when('/user/:id', '/contacts/:id')'/'
+                .when('/', ['$state', function ($state) {
+                    $state.transitionTo('contacts.detail', {contactId: 1}, {location: false});
+                }])
+                .when('/contacts', ['$state', function ($state) {
+                    $state.transitionTo('contacts.detail', {contactId: 1}, {location: false});
+                }])
                 .otherwise('/');
 
             $stateProvider
             .state("home", {
-                abstract: true,
                 url: "/"
             })
             .state('contacts', {
-                abstract: true,
                 url: '/contacts',
-                template: '<div ui-view></div>'
+                template: 'Contacts: <div ui-view></div>'
             })
             .state('contacts.detail', {
                 url: '/:contactId',
                 template: '<p class="lead">Contact ID is {{$stateParams.contactId}}</p>'
-            })
+            });
         }
     ]);
