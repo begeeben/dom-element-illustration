@@ -66,3 +66,117 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
+
+/* line 11, ../sass/screen.sass */
+body {
+  background-color: #222222;
+}
+
+/* line 16, ../sass/screen.sass */
+#bg1, #bg2, #bg3 {
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/bubbles.png) repeat 0 0;
+}
+
+/* line 25, ../sass/screen.sass */
+#bg2 {
+  z-index: 49;
+  background-image: url(../img/bubbles2.png);
+}
+
+/* line 29, ../sass/screen.sass */
+#bg3 {
+  z-index: 48;
+  background-image: url(../img/bubbles3.png);
+}
+
+/* line 33, ../sass/screen.sass */
+.layer-1 {
+  width: 90%;
+  height: 2000px;
+  background-color: black;
+  margin: auto;
+}
+
+/* line 39, ../sass/screen.sass */
+.layer-2 {
+  width: 90%;
+  height: 80%;
+  background-color: #e9e49f;
+  margin: auto;
+}
+
+/* line 45, ../sass/screen.sass */
+.board {
+  background-image: url(../img/retina_wood.png);
+  width: 960px;
+  height: 640px;
+  left: 50%;
+  margin-left: -480px;
+}
+
+/* line 55, ../sass/screen.sass */
+.location {
+  font-size: 7em;
+  color: white;
+  z-index: 120;
+  opacity: 1;
+}
+
+/* line 62, ../sass/screen.sass */
+.message {
+  font-size: 5em;
+  color: white;
+  z-index: 110;
+  opacity: 1;
+}
+
+/* line 69, ../sass/screen.sass */
+.photo-frame {
+  border-style: solid;
+  border-color: white;
+  background-color: grey;
+  z-index: 100;
+  opacity: 1;
+  -webkit-box-shadow: black 10px 10px 25px;
+  -moz-box-shadow: black 10px 10px 25px;
+  box-shadow: black 10px 10px 25px;
+}
+/* line 77, ../sass/screen.sass */
+.photo-frame.large {
+  width: 600px;
+  height: 400px;
+  margin: 10px;
+  border-width: 20px;
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+/* line 84, ../sass/screen.sass */
+.photo-frame.small {
+  width: 300px;
+  height: 200px;
+  left: 550px;
+  margin: 5px;
+  border-width: 10px;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+/* line 92, ../sass/screen.sass */
+.skrollable {
+  position: fixed;
+}
+/* line 95, ../sass/screen.sass */
+.skrollable .skrollable {
+  position: absolute;
+}
