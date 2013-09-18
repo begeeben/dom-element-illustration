@@ -9,61 +9,86 @@
 @import compass/css3/transform
 
 body
-	background-color: #222
-	// opacity: 0.7
-	
+	&.frenchstucco
+		background-image: url(../img/frenchstucco.png)
+	&.rockywall
+		background-image: url(../img/rockywall.png)
+	&.wall4
+		background-image: url(../img/wall4.png)
+	&.whitey
+		background-image: url(../img/whitey.png)
+	&.xv
+		background-image: url(../img/xv.png)
 
-#bg1, #bg2, #bg3
+.blend
+	background-color: #222
+	width: 100%
+	top: 0
+	bottom: 0
+
+#bg1, #bg2, #bg3, #bg4, #bg5
 	// position: fixed
 	z-index: 50
 	top: 0
 	left: 0
 	width: 100%
 	height: 100%
-	background: url(../img/bubbles.png) repeat 0 0
+	background: url(../img/snow-blur.png) repeat 0 0
 
 #bg2
 	z-index: 49
-	background-image: url(../img/bubbles2.png)
+	background-image: url(../img/snow-blur.png)
 
 #bg3
 	z-index: 48
-	background-image: url(../img/bubbles3.png)
+	background-image: url(../img/snow-clear.png)
 
-.layer-1
-	width: 90%
-	height: 2000px
-	background-color: black
-	margin: auto
+#bg4
+	z-index: 47
+	background-image: url(../img/snow-clear.png)
 
-.layer-2
-	width: 90%
-	height: 80%
-	background-color: #e9e49f
-	margin: auto
+#bg5
+	z-index: 46
+	background-image: url(../img/snow-clear.png)
+
+// .layer-1
+// 	width: 90%
+// 	height: 2000px
+// 	background-color: black
+// 	margin: auto
+
+// .layer-2
+// 	width: 90%
+// 	height: 80%
+// 	background-color: #e9e49f
+// 	margin: auto
 
 .board
 	// position: absolute
 	// background-color: orange
-	background-image: url(../img/retina_wood.png)
 	width: 960px
 	height: 640px
 	left: 50%
+	margin-top: -320px
 	margin-left: -480px
+	@include box-shadow(rgb(0,0,0) 1px 10px 15px)
 	// margin: 0 auto
+	&.wood
+		background-image: url(../img/retina_wood.png)
+	&.wood-stripe
+		background-image: url(../img/tileable_wood_texture.png)
 
 .location
+	bottom: 20px
 	font-size: 7em
 	color: #fff
 	z-index: 120
-	opacity: 1
 	// @include box-shadow(rgb(0,0,0) 10px 10px 15px)
 
 .message
 	font-size: 5em
 	color: #fff
 	z-index: 110
-	opacity: 1
 	// @include box-shadow(rgb(0,0,0) 10px 10px 15px)
 
 .photo-frame
@@ -84,10 +109,17 @@ body
 	&.small
 		width: 300px
 		height: 200px
-		left: 550px
+		// left: 600px
 		margin: 5px
 		border-width: 10px
+
+	&.rightside
+		left: 620px
 		@include rotate(-2deg)
+
+	&.leftside
+		left: 550px
+		@include rotate(4deg)
 
 .skrollable
 	position: fixed

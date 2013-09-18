@@ -1,6 +1,5 @@
+skrollr.init({
+    // edgeStrategy: 'set',
 
-    skrollr.init({
-        // edgeStrategy: 'set',
-
-        // forceHeight: false
-    });
+    // forceHeight: false
+});
