@@ -41,7 +41,7 @@
     $('#heart-beat').click(function() {
         $('.loading').fadeIn(2000).fadeOut(2000);
     });
-
+    // Prevent the hash anchor from scrolling to the top of the page.
     document.onclick = function (evt) {
         var tgt = (evt && evt.target) || event.srcElement,
             scr = document.body.scrollTop;

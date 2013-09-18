@@ -95,7 +95,7 @@ body.xv {
 /* line 25, ../sass/screen.sass */
 .loading {
   position: fixed;
-  background-color: #888888;
+  background-color: #46aaa9;
   width: 100%;
   top: 0;
   bottom: 0;
@@ -112,7 +112,7 @@ body.xv {
 
 /* line 45, ../sass/screen.sass */
 .blend {
-  background-color: #222222;
+  background-color: #46aaa9;
   width: 100%;
   top: 0;
   bottom: 0;
@@ -156,7 +156,7 @@ body.xv {
 /* line 77, ../sass/screen.sass */
 #bg5 {
   z-index: 46;
-  background-image: url(../img/snow-clear.png);
+  background-image: url(../img/snow-flake.png);
 }
 
 /* line 93, ../sass/screen.sass */
