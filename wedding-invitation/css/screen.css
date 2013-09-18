@@ -119,6 +119,13 @@ body.xv {
 }
 
 /* line 51, ../sass/screen.sass */
+.button-container {
+  position: fixed;
+  margin: 10px 0 0 10px;
+  z-index: 200;
+}
+
+/* line 56, ../sass/screen.sass */
 #bg1, #bg2, #bg3, #bg4, #bg5 {
   z-index: 50;
   top: 0;
@@ -128,31 +135,31 @@ body.xv {
   background: url(../img/snow-blur.png) repeat 0 0;
 }
 
-/* line 60, ../sass/screen.sass */
+/* line 65, ../sass/screen.sass */
 #bg2 {
   z-index: 49;
   background-image: url(../img/snow-blur.png);
 }
 
-/* line 64, ../sass/screen.sass */
+/* line 69, ../sass/screen.sass */
 #bg3 {
   z-index: 48;
   background-image: url(../img/snow-clear.png);
 }
 
-/* line 68, ../sass/screen.sass */
+/* line 73, ../sass/screen.sass */
 #bg4 {
   z-index: 47;
   background-image: url(../img/snow-clear.png);
 }
 
-/* line 72, ../sass/screen.sass */
+/* line 77, ../sass/screen.sass */
 #bg5 {
   z-index: 46;
   background-image: url(../img/snow-clear.png);
 }
 
-/* line 88, ../sass/screen.sass */
+/* line 93, ../sass/screen.sass */
 .board {
   width: 960px;
   height: 640px;
@@ -163,16 +170,16 @@ body.xv {
   -moz-box-shadow: black 1px 10px 15px;
   box-shadow: black 1px 10px 15px;
 }
-/* line 98, ../sass/screen.sass */
+/* line 103, ../sass/screen.sass */
 .board.wood {
   background-image: url(../img/retina_wood.png);
 }
-/* line 100, ../sass/screen.sass */
+/* line 105, ../sass/screen.sass */
 .board.wood-stripe {
   background-image: url(../img/tileable_wood_texture.png);
 }
 
-/* line 103, ../sass/screen.sass */
+/* line 108, ../sass/screen.sass */
 .location {
   bottom: 20px;
   font-size: 7em;
@@ -180,14 +187,14 @@ body.xv {
   z-index: 120;
 }
 
-/* line 110, ../sass/screen.sass */
+/* line 115, ../sass/screen.sass */
 .message {
   font-size: 5em;
   color: white;
   z-index: 110;
 }
 
-/* line 116, ../sass/screen.sass */
+/* line 121, ../sass/screen.sass */
 .photo-frame {
   border-style: solid;
   border-color: white;
@@ -198,7 +205,7 @@ body.xv {
   -moz-box-shadow: black 10px 10px 25px;
   box-shadow: black 10px 10px 25px;
 }
-/* line 124, ../sass/screen.sass */
+/* line 129, ../sass/screen.sass */
 .photo-frame.large {
   width: 600px;
   height: 400px;
@@ -210,14 +217,14 @@ body.xv {
   -o-transform: rotate(-10deg);
   transform: rotate(-10deg);
 }
-/* line 131, ../sass/screen.sass */
+/* line 136, ../sass/screen.sass */
 .photo-frame.small {
   width: 300px;
   height: 200px;
   margin: 5px;
   border-width: 10px;
 }
-/* line 138, ../sass/screen.sass */
+/* line 143, ../sass/screen.sass */
 .photo-frame.rightside {
   left: 620px;
   -webkit-transform: rotate(-2deg);
@@ -226,7 +233,7 @@ body.xv {
   -o-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 142, ../sass/screen.sass */
+/* line 147, ../sass/screen.sass */
 .photo-frame.leftside {
   left: 550px;
   -webkit-transform: rotate(4deg);
@@ -236,11 +243,11 @@ body.xv {
   transform: rotate(4deg);
 }
 
-/* line 146, ../sass/screen.sass */
+/* line 151, ../sass/screen.sass */
 .skrollable {
   position: fixed;
 }
-/* line 149, ../sass/screen.sass */
+/* line 154, ../sass/screen.sass */
 .skrollable .skrollable {
   position: absolute;
 }

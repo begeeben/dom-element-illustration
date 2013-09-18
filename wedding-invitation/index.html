@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
+        <!-- <meta http-equiv="cache-control" content="no-cache" /> -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="description" content="">
@@ -15,6 +16,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="css/buttons.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body class="frenchstucco">
@@ -24,7 +27,15 @@
         <div class="loading">
             <img src="img/481.gif" alt="">
         </div>
+
         <div class="blend" data-0="opacity:0.5;" data-900="opacity:0"></div>
+
+        <div class="button-container">
+            <span class="button-wrap"><a href="#" id="change-background" class="button button-circle button-primary">Background</a></span>
+            <span class="button-wrap"><a href="#" id="change-photo-board" class="button button-circle button-highlight">1st Board</a></span>
+            <span class="button-wrap"><a href="#" id="change-invitation-board" class="button button-circle button-highlight">2nd Board</a></span>
+            <span class="button-wrap"><a href="#" id="heart-beat" class="button button-circle button-caution">Heart</a></span>            
+        </div>
 
         <!-- Add your site or application content here -->
         <div id="bg1" data-0="background-position:-20px 100px;" data-end="background-position:500px 3000px;"></div>
@@ -43,7 +54,7 @@
             <h1 class="title"><h1>TEST</h1></h1>
             <div class="photo"></div>
         </div> 
-        <div class="board wood" data-0="top:150%;" data-1000="top:50%;" data-4000="top:50%" data-5000="top:-150%;">
+        <div class="photo-board board wood" data-0="top:150%;" data-1000="top:50%;" data-4000="top:50%" data-5000="top:-150%;">
             <div class="location" data-1300="left:150%;" data-1700="left:5%;" data-3500="left:5%" data-4200="left:-100%;"><h1>Location 1</h1></div>
             <div class="message" data-1500="left:-100%;" data-1900="left:60%;" data-3500="left:70%" data-4000="left:100%;"><h2>Message</h2></div>
             <div class="photo-frame large" data-900="top:100%;" data-1300="top:10%;" data-3700="top:0"></div>
@@ -71,10 +82,12 @@
             <div class="photo-frame small"></div>
             <div class="photo-frame small"></div>
         </div> -->
-        <div id="invitation" class="board wood-stripe" data-4000="top:150%" data-4500="top:50%">
-            <div id="date"></div>
-            <div id="location"></div>
-            <div id="google-doc"></div>
+        <div id="invitation-board" class="board wood-stripe" data-4000="top:150%" data-4500="top:50%">
+            <h1></h1>
+            <div id="date"><span></span></div>
+            <div id="location"><span></span></div>
+            <div id="google-doc"><span><a href=""></a></span></div>
+            <div id="email"><span><a href="">asailliao@gmail.com</a></span></div>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
