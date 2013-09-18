@@ -67,28 +67,50 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 12, ../sass/screen.sass */
+/* line 11, ../sass/screen.sass */
+body {
+  overflow: scroll;
+}
+/* line 14, ../sass/screen.sass */
 body.frenchstucco {
   background-image: url(../img/frenchstucco.png);
 }
-/* line 14, ../sass/screen.sass */
+/* line 16, ../sass/screen.sass */
 body.rockywall {
   background-image: url(../img/rockywall.png);
 }
-/* line 16, ../sass/screen.sass */
+/* line 18, ../sass/screen.sass */
 body.wall4 {
   background-image: url(../img/wall4.png);
 }
-/* line 18, ../sass/screen.sass */
+/* line 20, ../sass/screen.sass */
 body.whitey {
   background-image: url(../img/whitey.png);
 }
-/* line 20, ../sass/screen.sass */
+/* line 22, ../sass/screen.sass */
 body.xv {
   background-image: url(../img/xv.png);
 }
 
-/* line 23, ../sass/screen.sass */
+/* line 25, ../sass/screen.sass */
+.loading {
+  position: fixed;
+  background-color: #888888;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 150;
+}
+/* line 37, ../sass/screen.sass */
+.loading img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -64px;
+  margin-left: -64px;
+}
+
+/* line 45, ../sass/screen.sass */
 .blend {
   background-color: #222222;
   width: 100%;
@@ -96,7 +118,7 @@ body.xv {
   bottom: 0;
 }
 
-/* line 29, ../sass/screen.sass */
+/* line 51, ../sass/screen.sass */
 #bg1, #bg2, #bg3, #bg4, #bg5 {
   z-index: 50;
   top: 0;
@@ -106,31 +128,31 @@ body.xv {
   background: url(../img/snow-blur.png) repeat 0 0;
 }
 
-/* line 38, ../sass/screen.sass */
+/* line 60, ../sass/screen.sass */
 #bg2 {
   z-index: 49;
   background-image: url(../img/snow-blur.png);
 }
 
-/* line 42, ../sass/screen.sass */
+/* line 64, ../sass/screen.sass */
 #bg3 {
   z-index: 48;
   background-image: url(../img/snow-clear.png);
 }
 
-/* line 46, ../sass/screen.sass */
+/* line 68, ../sass/screen.sass */
 #bg4 {
   z-index: 47;
   background-image: url(../img/snow-clear.png);
 }
 
-/* line 50, ../sass/screen.sass */
+/* line 72, ../sass/screen.sass */
 #bg5 {
   z-index: 46;
   background-image: url(../img/snow-clear.png);
 }
 
-/* line 66, ../sass/screen.sass */
+/* line 88, ../sass/screen.sass */
 .board {
   width: 960px;
   height: 640px;
@@ -141,16 +163,16 @@ body.xv {
   -moz-box-shadow: black 1px 10px 15px;
   box-shadow: black 1px 10px 15px;
 }
-/* line 76, ../sass/screen.sass */
+/* line 98, ../sass/screen.sass */
 .board.wood {
   background-image: url(../img/retina_wood.png);
 }
-/* line 78, ../sass/screen.sass */
+/* line 100, ../sass/screen.sass */
 .board.wood-stripe {
   background-image: url(../img/tileable_wood_texture.png);
 }
 
-/* line 81, ../sass/screen.sass */
+/* line 103, ../sass/screen.sass */
 .location {
   bottom: 20px;
   font-size: 7em;
@@ -158,14 +180,14 @@ body.xv {
   z-index: 120;
 }
 
-/* line 88, ../sass/screen.sass */
+/* line 110, ../sass/screen.sass */
 .message {
   font-size: 5em;
   color: white;
   z-index: 110;
 }
 
-/* line 94, ../sass/screen.sass */
+/* line 116, ../sass/screen.sass */
 .photo-frame {
   border-style: solid;
   border-color: white;
@@ -176,7 +198,7 @@ body.xv {
   -moz-box-shadow: black 10px 10px 25px;
   box-shadow: black 10px 10px 25px;
 }
-/* line 102, ../sass/screen.sass */
+/* line 124, ../sass/screen.sass */
 .photo-frame.large {
   width: 600px;
   height: 400px;
@@ -188,14 +210,14 @@ body.xv {
   -o-transform: rotate(-10deg);
   transform: rotate(-10deg);
 }
-/* line 109, ../sass/screen.sass */
+/* line 131, ../sass/screen.sass */
 .photo-frame.small {
   width: 300px;
   height: 200px;
   margin: 5px;
   border-width: 10px;
 }
-/* line 116, ../sass/screen.sass */
+/* line 138, ../sass/screen.sass */
 .photo-frame.rightside {
   left: 620px;
   -webkit-transform: rotate(-2deg);
@@ -204,7 +226,7 @@ body.xv {
   -o-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 120, ../sass/screen.sass */
+/* line 142, ../sass/screen.sass */
 .photo-frame.leftside {
   left: 550px;
   -webkit-transform: rotate(4deg);
@@ -214,11 +236,11 @@ body.xv {
   transform: rotate(4deg);
 }
 
-/* line 124, ../sass/screen.sass */
+/* line 146, ../sass/screen.sass */
 .skrollable {
   position: fixed;
 }
-/* line 127, ../sass/screen.sass */
+/* line 149, ../sass/screen.sass */
 .skrollable .skrollable {
   position: absolute;
 }

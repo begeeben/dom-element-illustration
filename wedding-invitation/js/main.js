@@ -1,5 +1,9 @@
-skrollr.init({
-    // edgeStrategy: 'set',
+$(window).load(function() {
+    skrollr.init({
+        // edgeStrategy: 'set',
 
-    // forceHeight: false
+        // forceHeight: false
+    });
+
+    $('.loading').fadeOut(2000);
 });
