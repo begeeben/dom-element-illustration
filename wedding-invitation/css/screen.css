@@ -247,6 +247,11 @@ body.xv {
   border-width: 10px;
 }
 /* line 148, ../sass/screen.sass */
+.photo-frame.small img {
+  width: 300px;
+  height: 200px;
+}
+/* line 152, ../sass/screen.sass */
 .photo-frame.rightside {
   left: 620px;
   -webkit-transform: rotate(-2deg);
@@ -255,7 +260,7 @@ body.xv {
   -o-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 152, ../sass/screen.sass */
+/* line 156, ../sass/screen.sass */
 .photo-frame.leftside {
   left: 550px;
   -webkit-transform: rotate(4deg);
@@ -265,43 +270,43 @@ body.xv {
   transform: rotate(4deg);
 }
 
-/* line 156, ../sass/screen.sass */
+/* line 160, ../sass/screen.sass */
 #invitation-board {
   font-size: 1.5em;
   display: table;
   z-index: 100;
 }
-/* line 161, ../sass/screen.sass */
+/* line 165, ../sass/screen.sass */
 #invitation-board div {
   margin-top: 10px;
 }
-/* line 164, ../sass/screen.sass */
+/* line 168, ../sass/screen.sass */
 #invitation-board img {
   margin-right: 15px;
   float: left;
 }
-/* line 168, ../sass/screen.sass */
+/* line 172, ../sass/screen.sass */
 #invitation-board .vertical-center {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 176, ../sass/screen.sass */
+/* line 180, ../sass/screen.sass */
 #invitation-form {
   z-index: 100;
 }
-/* line 179, ../sass/screen.sass */
+/* line 183, ../sass/screen.sass */
 #invitation-form div {
   position: relative;
   top: 70px;
   left: 100px;
 }
 
-/* line 184, ../sass/screen.sass */
+/* line 188, ../sass/screen.sass */
 .skrollable {
   position: fixed;
 }
-/* line 187, ../sass/screen.sass */
+/* line 191, ../sass/screen.sass */
 .skrollable .skrollable {
   position: absolute;
 }
