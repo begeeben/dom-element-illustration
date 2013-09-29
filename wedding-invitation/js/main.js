@@ -7,14 +7,14 @@
         'xv'
     ];
 
-    var currentBackgroundStyleIndex = 0;
+    var currentBackgroundStyleIndex = 3;
 
     var boardStyleList = [
         'wood',
         'wood-stripe'
     ];
 
-    var currentPhotoBoardStyleIndex = 0;
+    var currentPhotoBoardStyleIndex = 1;
     var currentInvitationBoardStyleIndex = 1;
 
     $('#change-background').click(function() {
