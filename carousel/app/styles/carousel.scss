@@ -24,6 +24,9 @@ div#carousel {
     &.right-most {
       left: 70%;
       transform: rotateY(-80deg);
+      &:before {
+        background-color: rgba(0, 0, 0, 1);
+      }
     }
 
     &.right {
@@ -53,11 +56,17 @@ div#carousel {
     &.left-most {
       left: -10%;
       transform: rotateY(80deg);
+      &:before {
+        background-color: rgba(0, 0, 0, 1);
+      }
     }
     
     &.right-most-active {
       left: 70%;
       transform: rotateY(-80deg);
+      &:before {
+        background-color: rgba(0, 0, 0, 1);
+      }
     }
     &.right-active {
       left: 60%;
@@ -86,6 +95,9 @@ div#carousel {
     &.left-most-active {
       left: -10%;
       transform: rotateY(80deg);
+      &:before {
+        background-color: rgba(0, 0, 0, 1);
+      }
     }
 
     &:before {
