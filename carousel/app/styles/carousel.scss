@@ -1,6 +1,58 @@
+@mixin carousel-item($left, $degree, $color) {
+  left: $left;
+  transform: rotateY($degree);
+  &:before {
+    background-color: $color;
+  }
+}
+
+@mixin carousel-right-most {
+  left: 70%;
+  transform: rotateY(-80deg);
+  &:before {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+
+@mixin carousel-right {
+  left: 60%;
+  transform: rotateY(-60deg);
+  z-index: 10;
+  &:before {
+    background-color: rgba(0, 0, 0, 0.6);
+  }  
+}
+
+@mixin carousel-center {
+  left: 30%;
+  transform: rotateY(0deg);
+  z-index: 20;
+  &:before {
+    background-color: transparent;
+  }
+}
+
+@mixin carousel-left {
+  left: 0;
+  transform: rotateY(60deg);
+  z-index: 10;
+  &:before {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@mixin carousel-left-most {
+  left: -10%;
+  transform: rotateY(80deg);
+  &:before {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+
 div#carousel {
   perspective: 1200;
   background: #100000;
+  height: 500px;
   padding-top: 10%;
   font-size: 0;
   margin-bottom: 3rem;
@@ -21,83 +73,39 @@ div#carousel {
     outline: 1px solid transparent;
     @include transition-property(transform, left, opacity);
     @include transition-duration(0.6s);
+
     &.right-most {
-      left: 70%;
-      transform: rotateY(-80deg);
-      &:before {
-        background-color: rgba(0, 0, 0, 1);
-      }
+      @include carousel-right-most;
     }
 
     &.right {
-      left: 60%;
-      transform: rotateY(-60deg);
-      z-index: 10;
-      &:before {
-        background-color: rgba(0, 0, 0, 0.6);
-      }
+      @include carousel-right;
     }
     &.center {
-      left: 30%;
-      transform: rotateY(0deg);
-      z-index: 20;
-      &:before {
-        background-color: transparent;
-      }
+      @include carousel-center;
     }
     &.left {
-      left: 0;
-      transform: rotateY(60deg);
-      z-index: 10;
-      &:before {
-        background-color: rgba(0, 0, 0, 0.6);
-      }
+      @include carousel-left;
     }
     &.left-most {
-      left: -10%;
-      transform: rotateY(80deg);
-      &:before {
-        background-color: rgba(0, 0, 0, 1);
-      }
+      @include carousel-left-most;
     }
     
     &.right-most-active {
-      left: 70%;
-      transform: rotateY(-80deg);
-      &:before {
-        background-color: rgba(0, 0, 0, 1);
-      }
+      @include carousel-right-most;
     }
+
     &.right-active {
-      left: 60%;
-      transform: rotateY(-60deg);
-      z-index: 10;
-      &:before {
-        background-color: rgba(0, 0, 0, 0.6);
-      }
+      @include carousel-right;
     }
     &.center-active {
-      left: 30%;
-      transform: rotateY(0deg);
-      z-index: 20;
-      &:before {
-        background-color: transparent;
-      }
+      @include carousel-center;
     }
     &.left-active {
-      left: 0;
-      transform: rotateY(60deg);
-      z-index: 10;
-      &:before {
-        background-color: rgba(0, 0, 0, 0.6);
-      }
+      @include carousel-left;
     }
     &.left-most-active {
-      left: -10%;
-      transform: rotateY(80deg);
-      &:before {
-        background-color: rgba(0, 0, 0, 1);
-      }
+      @include carousel-left-most;
     }
 
     &:before {
