@@ -1,12 +1,14 @@
-$center-width: 50%;
-$sibling-width: 40%;
+$item-width: 40%;
+$center-scale: 1.3;
+// $center-width: 40%;
+// $sibling-width: 40%;
 $sibling-rotation: 70deg;
 $sibling-opacity: 0.8;
 
-@mixin carousel-item($width, $left, $degree, $color, $zIndex:0) {
-  width: $width;
+@mixin carousel-item($x, $y, $left, $degree, $color, $zIndex:0) {
+  // width: $width;
   left: $left;
-  transform: rotateY($degree);
+  transform: rotateY($degree) translateY(-50%) scale($x, $y);
   z-index: $zIndex;
   &:before {
     background-color: $color;
@@ -14,30 +16,28 @@ $sibling-opacity: 0.8;
 }
 
 @mixin carousel-right-most {
-  @include carousel-item($sibling-width, 70%, -80deg, rgba(0,0,0,1));
+  @include carousel-item(1, 1, 70%, -80deg, rgba(0,0,0,1));
 }
 
 @mixin carousel-right {
-  @include carousel-item($sibling-width, 60%, -$sibling-rotation, rgba(0,0,0,$sibling-opacity), 10);
+  @include carousel-item(1, 1, 60%, -$sibling-rotation, rgba(0,0,0,$sibling-opacity), 10);
 }
 
 @mixin carousel-center {
-  @include carousel-item($center-width, 25%, 0deg, transparent, 20);
+  @include carousel-item($center-scale, $center-scale, 30%, 0deg, transparent, 20);
 }
 
 @mixin carousel-left {
-  @include carousel-item($sibling-width, 0, $sibling-rotation, rgba(0,0,0,$sibling-opacity), 10);
+  @include carousel-item(1, 1, 0, $sibling-rotation, rgba(0,0,0,$sibling-opacity), 10);
 }
 
 @mixin carousel-left-most {
-  @include carousel-item($sibling-width, -10%, 80deg, rgba(0,0,0,1));
+  @include carousel-item(1, 1, -10%, 80deg, rgba(0,0,0,1));
 }
 
 div#carousel {
   perspective: 1200;
   background: #100000;
-  height: 500px;
-  padding-top: 10%;
   font-size: 0;
   margin-bottom: 3rem;
   overflow: hidden;
@@ -45,17 +45,20 @@ div#carousel {
 
 .carousel {
   transform-style: preserve-3d;
-  // height: 300px;
+  width: 100%;
+  height: 500px;
   .item {
+    width: $item-width;
     position: absolute;
     outline: 1px solid transparent;
+    top: 50%;
+    // transform: translateY(-50%);
     @include transition-property(transform, left, width, opacity);
     @include transition-duration(0.6s);
 
     &.right-most {
       @include carousel-right-most;
     }
-
     &.right {
       @include carousel-right;
     }
@@ -72,7 +75,6 @@ div#carousel {
     &.right-most-active {
       @include carousel-right-most;
     }
-
     &.right-active {
       @include carousel-right;
     }
