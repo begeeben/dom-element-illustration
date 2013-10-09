@@ -1,52 +1,30 @@
-@mixin carousel-item($left, $degree, $color) {
+@mixin carousel-item($left, $degree, $color, $zIndex:0) {
   left: $left;
   transform: rotateY($degree);
+  z-index: $zIndex;
   &:before {
     background-color: $color;
   }
 }
 
 @mixin carousel-right-most {
-  left: 70%;
-  transform: rotateY(-80deg);
-  &:before {
-    background-color: rgba(0, 0, 0, 1);
-  }
+  @include carousel-item(70%, -80deg, rgba(0,0,0,1));
 }
 
 @mixin carousel-right {
-  left: 60%;
-  transform: rotateY(-60deg);
-  z-index: 10;
-  &:before {
-    background-color: rgba(0, 0, 0, 0.6);
-  }  
+  @include carousel-item(60%, -60deg, rgba(0,0,0,0.6), 10);
 }
 
 @mixin carousel-center {
-  left: 30%;
-  transform: rotateY(0deg);
-  z-index: 20;
-  &:before {
-    background-color: transparent;
-  }
+  @include carousel-item(30%, 0deg, transparent, 20);
 }
 
 @mixin carousel-left {
-  left: 0;
-  transform: rotateY(60deg);
-  z-index: 10;
-  &:before {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
+  @include carousel-item(0, 60deg, rgba(0,0,0,0.6), 10);
 }
 
 @mixin carousel-left-most {
-  left: -10%;
-  transform: rotateY(80deg);
-  &:before {
-    background-color: rgba(0, 0, 0, 1);
-  }
+  @include carousel-item(-10%, 80deg, rgba(0,0,0,1));
 }
 
 div#carousel {
@@ -59,12 +37,12 @@ div#carousel {
   overflow: hidden;
 }
 
-#spinner {
+.carousel {
   transform-style: preserve-3d;
   // height: 300px;
   // transform-origin: 50% 50% -500px;
   // transition: 1s;
-  div {
+  .item {
     width: 40%;
     // max-width: 425px;
     position: absolute;
