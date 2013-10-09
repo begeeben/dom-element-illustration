@@ -1,59 +1,40 @@
+var transitions = 0;
+
 $('.carousel').on('click', '.right', moveLeft);
 
 $('.carousel').on('click', '.left', moveRight);
 
 $('.carousel').on('transitionend', function(e){
-    console.debug(e);
+    // console.debug(e);
+    // console.debug(transitions);
 
-    // switch(e.target.className) {
-    //     case '':
-    // }
-    var className = e.target.className;
-    if (className.indexOf('left-most-active')) {
-        className = 'left-most';
-    } else if (className.indexOf('right-most-active')) {
-        className = 'right-most';
-    } else if (className.indexOf('right-active')) {
-        className = 'right';
-    } else if (className.indexOf('left-active')) {
-        className = 'left';
-    } else if (className.indexOf('center-active')) {
-        className = 'center';
+    transitions -= 1;
+
+    if (transitions < 1) {
+        $(this).find('.left-active').addClass('left').removeClass('center left-most left-active');
+        $(this).find('.center-active').addClass('center').removeClass('right left center-active');
+        $(this).find('.left-most-active').addClass('left-most').removeClass('left left-most-active');
+        $(this).find('.right-active').addClass('right').removeClass('right-active center right-most');
+        $(this).find('.right-most-active').addClass('right-most').removeClass('right right-most-active');
     }
-
-    // e.target.className = className;
 });
 
+function addTransition() { transitions += 3; }
+
 function moveLeft(e){
-    $(".carousel .center").addClass("left-active");
-    // .one('transitionend', function(e){
-    //     // $(this).addClass('left').removeClass('center left-active');
-    // });
-    $(".carousel .right").addClass("center-active");
-    // .one('transitionend', function(e){
-    //     // $(this).addClass('center').removeClass('right center-active');
-    // });
-    $(".carousel .left").addClass("left-most-active");
-    // .one('transitionend', function(e){
-    //     // $(this).addClass('left-most').removeClass('left left-most-active');
-    // });
-    $(this).next().addClass('right-active');
-    // .one('transitionend', function(e){
-    //     // $(this).addClass('right').removeClass('right-active right-most');
-    // });
+    if (transitions < 1) {
+        $(".carousel .center").addClass("left-active").each(addTransition);
+        $(".carousel .right").addClass("center-active").each(addTransition);
+        $(".carousel .left").addClass("left-most-active").each(addTransition);
+        $(this).next().addClass('right-active').each(addTransition);
+    }
 }
 
 function moveRight(e){
-    $(".carousel .center").addClass("right-active").one('transitionend', function(e){
-        // $(this).addClass('right').removeClass('center right-active');
-    });
-    $(".carousel .right").addClass("right-most-active").one('transitionend', function(e){
-        // $(this).addClass('right-most').removeClass('right right-most-active');
-    });
-    $(".carousel .left").addClass("center-active").one('transitionend', function(e){
-        // $(this).addClass('center').removeClass('left center-active');
-    });
-    $(this).prev().addClass('left-active').one('transitionend', function(e){
-        // $(this).addClass('left').removeClass('left-active left-most');
-    });
+    if (transitions < 1) {
+        $(".carousel .center").addClass("right-active").each(addTransition);
+        $(".carousel .right").addClass("right-most-active").each(addTransition);
+        $(".carousel .left").addClass("center-active").each(addTransition);
+        $(this).prev().addClass('left-active').each(addTransition);
+    }
 }
