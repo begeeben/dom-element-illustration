@@ -1,4 +1,10 @@
-@mixin carousel-item($left, $degree, $color, $zIndex:0) {
+$center-width: 50%;
+$sibling-width: 40%;
+$sibling-rotation: 70deg;
+$sibling-opacity: 0.8;
+
+@mixin carousel-item($width, $left, $degree, $color, $zIndex:0) {
+  width: $width;
   left: $left;
   transform: rotateY($degree);
   z-index: $zIndex;
@@ -8,23 +14,23 @@
 }
 
 @mixin carousel-right-most {
-  @include carousel-item(70%, -80deg, rgba(0,0,0,1));
+  @include carousel-item($sibling-width, 70%, -80deg, rgba(0,0,0,1));
 }
 
 @mixin carousel-right {
-  @include carousel-item(60%, -60deg, rgba(0,0,0,0.6), 10);
+  @include carousel-item($sibling-width, 60%, -$sibling-rotation, rgba(0,0,0,$sibling-opacity), 10);
 }
 
 @mixin carousel-center {
-  @include carousel-item(30%, 0deg, transparent, 20);
+  @include carousel-item($center-width, 25%, 0deg, transparent, 20);
 }
 
 @mixin carousel-left {
-  @include carousel-item(0, 60deg, rgba(0,0,0,0.6), 10);
+  @include carousel-item($sibling-width, 0, $sibling-rotation, rgba(0,0,0,$sibling-opacity), 10);
 }
 
 @mixin carousel-left-most {
-  @include carousel-item(-10%, 80deg, rgba(0,0,0,1));
+  @include carousel-item($sibling-width, -10%, 80deg, rgba(0,0,0,1));
 }
 
 div#carousel {
@@ -40,16 +46,10 @@ div#carousel {
 .carousel {
   transform-style: preserve-3d;
   // height: 300px;
-  // transform-origin: 50% 50% -500px;
-  // transition: 1s;
   .item {
-    width: 40%;
-    // max-width: 425px;
     position: absolute;
-    // left: 100%;
-    // transform-origin: 50% 50% -500px;
     outline: 1px solid transparent;
-    @include transition-property(transform, left, opacity);
+    @include transition-property(transform, left, width, opacity);
     @include transition-duration(0.6s);
 
     &.right-most {
