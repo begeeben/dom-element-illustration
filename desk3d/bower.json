@@ -1,9 +1,0 @@
-{
-  "name": "desk3d",
-  "version": "0.0.0",
-  "dependencies": {
-    "jquery": "~1.10.2",
-    "threejs": "*"
-  },
-  "devDependencies": {}
-}
