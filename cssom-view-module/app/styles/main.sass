@@ -1,0 +1,220 @@
+// bower:sass
+// endbower
+@import "compass/reset"
+@import "compass/css3"
+
+$margin-color: #ebc385
+$border-color: #f1d781
+$padding-color: #b4c66f
+$offset-text-color: #b09640
+$client-text-color: #72842d
+$scroll-color: #aaa
+$scroll-text-color: #777
+
+$default-box-sizing: border-box
+$default-wrapper-width: 200px
+$default-wrapper-height: 200px
+$default-wrapper-margin: 20px
+$default-wrapper-border-width: 20px
+$default-wrapper-padding: 20px
+$default-content-fit-width: $default-wrapper-width - 2 * ($default-wrapper-border-width + $default-wrapper-padding)
+$default-content-fit-height: $default-wrapper-height - 2 * ($default-wrapper-border-width + $default-wrapper-padding)
+$default-content-wide-width: 200px
+$default-content-long-height: 200px
+
+$scroll-bar-width: 15px
+
+$transition-duration: .4s
+
+%sizing-transition
+    @include transition-property(height, width)
+    @include transition-duration($transition-duration)
+    @include transition-timing-function(ease-in)
+
+%height-marker
+    position: absolute
+    padding-right: 1rem
+    text-align: right
+
+body
+    background: #fafafa
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+div
+    box-sizing: $default-box-sizing
+
+.is-hidden
+    display: none
+
+.browsehappy
+    margin: 0.2em 0
+    background: #ccc
+    color: #000
+    padding: 0.2em 0
+
+.demo
+    width: 960px
+    margin: 0 auto
+
+.button-container
+    margin: 1rem 0
+
+.demo-container
+    position: relative
+
+.demo-outer
+    // margin: 1rem
+    // float: left
+    display: inline-block
+    // border: solid 1px black
+    background-color: $margin-color
+
+.demo-wrapper
+    width: $default-wrapper-width
+    height: $default-wrapper-height
+    margin: $default-wrapper-margin
+    padding: $default-wrapper-padding
+    background-color: $padding-color
+    border: solid $border-color
+    border-width: $default-wrapper-border-width
+    overflow: auto
+
+    .demo-content
+        // float: left
+        width: 100%
+        height: 100%
+        background-color: #fff
+
+        @extend %sizing-transition
+
+    .mock-content
+        // box-sizing: content-box
+        pointer-events: none
+        position: absolute
+        width: $default-content-fit-width + 2 * $default-wrapper-padding
+        height: $default-content-fit-height + 2 * $default-wrapper-padding
+        padding: 1rem
+        font-size: 1.2rem
+        color: #406071
+        background-color: #a3c3d4
+        border: $default-wrapper-padding $padding-color solid
+        opacity: .6
+        @extend %sizing-transition
+
+    .client-height
+        width: $default-content-wide-width + 220px
+        height: $default-wrapper-height - 2 * $default-wrapper-border-width
+        top: $default-wrapper-margin + $default-wrapper-border-width
+        left: $default-wrapper-width + $default-wrapper-margin - $default-wrapper-border-width
+        border: .2rem solid $padding-color
+        border-left: 0
+        color: $client-text-color
+        @extend %height-marker
+        @extend %sizing-transition
+
+    .offset-height
+        width: $default-content-wide-width + 220px
+        height: $default-wrapper-height
+        top: $default-wrapper-margin
+        left: $default-wrapper-margin + $default-wrapper-width
+        border: .2rem solid $border-color
+        border-left: 0
+        color: $offset-text-color
+        @extend %height-marker
+
+    .scroll-height
+        pointer-events: none
+        width: $default-content-wide-width + 200px
+        height: $default-wrapper-height - 2 * $default-wrapper-border-width
+        top: $default-wrapper-margin + $default-wrapper-border-width
+        left: $default-wrapper-margin + $default-wrapper-border-width
+        // padding-top: 1rem
+        // padding-left: 2rem
+        border: .2rem solid $scroll-color
+        border-left: 0
+        color: $scroll-text-color
+        @extend %height-marker
+        // @extend %sizing-transition
+        @include transition-property(height)
+        @include transition-duration($transition-duration)
+        @include transition-timing-function(ease-in)
+
+    .client-width
+        width: $default-wrapper-width - 2 * $default-wrapper-border-width
+        height: $default-content-long-height - 40px
+        top:  $default-wrapper-height + $default-wrapper-margin - $default-wrapper-border-width
+        left: $default-wrapper-margin + $default-wrapper-border-width
+        border: .2rem solid $padding-color
+        border-top: 0
+        color: $client-text-color
+        @extend %height-marker
+        @extend %sizing-transition
+
+    .offset-width
+        width: $default-wrapper-width
+        height: $default-content-long-height - 20px
+        top: $default-wrapper-margin + $default-wrapper-width
+        left: $default-wrapper-margin
+        border: .2rem solid $border-color
+        border-top: 0
+        color: $offset-text-color
+        @extend %height-marker
+
+    .scroll-width
+        pointer-events: none
+        width: $default-wrapper-width - 2 * $default-wrapper-border-width
+        height: $default-content-long-height + 80px
+        top: $default-wrapper-margin + $default-wrapper-border-width
+        left: $default-wrapper-margin + $default-wrapper-border-width
+        // padding-top: 1rem
+        // padding-left: 2rem
+        border: .2rem solid $scroll-color
+        border-top: 0
+        color: $scroll-text-color
+        @extend %height-marker
+        // @extend %sizing-transition
+        @include transition-property(width)
+        @include transition-duration($transition-duration)
+        @include transition-timing-function(ease-in)
+
+    .width-text
+        position: absolute
+        // right: 0
+        bottom: 0
+
+    &.wide
+        .demo-content
+            width: $default-content-wide-width
+
+        .mock-content
+            width: $default-content-wide-width + $default-wrapper-padding
+            height: $default-content-fit-height + 2 * $default-wrapper-padding - $scroll-bar-width
+            border-right: 0
+
+        .scroll-width
+            width: $default-content-wide-width + $default-wrapper-padding
+
+        .client-height, .scroll-height
+            height: $default-wrapper-height - 2 * $default-wrapper-border-width - $scroll-bar-width
+
+    &.long
+        .demo-content
+            height: $default-content-long-height
+
+        .mock-content
+            width: $default-content-fit-width + 2 * $default-wrapper-padding - $scroll-bar-width
+            height: $default-content-long-height + 2 * $default-wrapper-padding
+
+        .scroll-height
+            height: $default-content-long-height + 2 * $default-wrapper-padding
+
+        .client-width, .scroll-width
+            width: $default-wrapper-width - 2 * $default-wrapper-border-width - $scroll-bar-width
+
+    &.wide.long
+        .mock-content
+            width: $default-content-wide-width + $default-wrapper-padding
+            height: $default-content-long-height + 2 * $default-wrapper-padding
+
+        .scroll-width
+            width: $default-content-wide-width + $default-wrapper-padding

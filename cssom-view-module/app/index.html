@@ -18,29 +18,54 @@
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
     </head>
     <body>
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <header>
+            <h1>CSSOM View Module</h1>
+        </header>
 
-
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>Sass with Compass</li>
-
-          </ul>
-        </div>
-
+        <section class="demo">
+            <div class="button-container">
+                <div class="settings">
+                    <button onclick="toggleHeight();">Toggle Height</button>
+                    <button onclick="toggleWidth();">Toggle Width</button>
+                    <button onclick="toggleWideContent();">Toggle Wide Content</button>
+                    <button onclick="toggleLongContent();">Toggle Long Content</button>
+                </div>
+            </div>
+            <div class="demo-container">
+                <div class="demo-outer">
+                    <div class="demo-wrapper" onscroll="updateMock()">
+                        <div class="demo-content"></div>
+                        <div class="mock-content">Content</div>
+                        <div class="client-width"><p class="width-text">clientWidth: </p></div>
+                        <div class="offset-width"><p class="width-text">offsetWidth: </p></div>
+                        <div class="scroll-width"><p class="width-text">scrollWidth: </p></div>
+                        <div class="client-height">clientHeight: </div>
+                        <div class="offset-height">offsetHeight: </div>
+                        <div class="scroll-height">scrollHeight: </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+        <footer></footer>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
+        
+        <!--
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -52,8 +77,5 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
 </body>
 </html>
