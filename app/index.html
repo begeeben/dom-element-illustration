@@ -42,10 +42,10 @@
                         <input type="radio" name="box-sizing"> padding-box<br>
                         <input type="radio" name="box-sizing" checked> border-box
                     </li>
-                    <li>margin: <span id="margin-value">20</span>px<br><input id="margin-slider" type="range" min="20" max="100" value="20" step="1" /></li>
-                    <li>padding: <span id="padding-value">20</span>px<br><input id="padding-slider" type="range" min="20" max="100" value="20" step="1" /></li>
-                    <li>width: <span id="width-value">200</span>px<br><input id="width-slider" type="range" min="200" max="400" step="1" /></li>
-                    <li>height: <span id="height-value">200</span>px<br><input id="height-slider" type="range" min="200" max="400" step="1" /></li>
+                    <li>margin: <span id="margin-value">20</span>px<br><input id="margin-slider" type="range" min="20" max="100" value="20" step="1" oninput="updateDimension('margin', this.value)" /></li>
+                    <li>padding: <span id="padding-value">20</span>px<br><input id="padding-slider" type="range" min="20" max="100" value="20" step="1" oninput="updateDimension('padding', this.value)" /></li>
+                    <li>width: <span id="width-value">200</span>px<br><input id="width-slider" type="range" min="200" max="400" step="1" oninput="updateDimension('width', this.value)" /></li>
+                    <li>height: <span id="height-value">200</span>px<br><input id="height-slider" type="range" min="200" max="400" step="1" oninput="updateDimension('height', this.value)" /></li>
                 </ul>
                 <h1>Views</h1>
                 <ul class="view-settings">

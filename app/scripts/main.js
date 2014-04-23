@@ -138,6 +138,11 @@ function update() {
 	animationId = requestAnimationFrame(update);
 }
 
+function updateDimension(prop, value) {
+	wrapperElement.style[prop] = value + 'px';
+	document.querySelector('#' + prop + '-value').innerHTML = value;
+}
+
 function toggleWideContent() {
 	toggleClass(wrapperElement, 'wide');
 	updateMock();
