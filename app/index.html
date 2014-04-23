@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>cssom view module</title>
+        <title>DOM Element Dimensions</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
@@ -27,33 +27,40 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-            <h1>CSSOM View Module</h1>
+        <header class="site-header">
+            <h1>DOM Element Dimensions</h1>
         </header>
 
         <section class="demo">
-            <div class="button-container">
-                <div class="settings">
-                    <button onclick="toggleHeight();">Toggle Height</button>
-                    <button onclick="toggleWidth();">Toggle Width</button>
-                    <button onclick="toggleWideContent();">Toggle Wide Content</button>
-                    <button onclick="toggleLongContent();">Toggle Long Content</button>
-                </div>
+            <div class="settings-panel left">
+                <h1>Dimensions</h1>
+                <ul class="settings">
+                    <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
+                    <li><button onclick="toggleLongContent();">Toggle Long Content</button></li>
+                </ul>
+                <h1>Views</h1>
+                <ul class="view-settings">
+                    <li><button onclick="toggleHeight();">Toggle Height</button></li>
+                    <li><button onclick="toggleWidth();">Toggle Width</button></li>
+                </ul>
             </div>
-            <div class="demo-container">
-                <div class="demo-outer">
-                    <div class="demo-wrapper" onscroll="updateMock()">
-                        <div class="demo-content"></div>
-                        <div class="mock-content">Content</div>
-                        <div class="client-width"><p class="width-text">clientWidth: </p></div>
-                        <div class="offset-width"><p class="width-text">offsetWidth: </p></div>
-                        <div class="scroll-width"><p class="width-text">scrollWidth: </p></div>
-                        <div class="client-height">clientHeight: </div>
-                        <div class="offset-height">offsetHeight: </div>
-                        <div class="scroll-height">scrollHeight: </div>
+            <!-- <div class="right"> -->
+                <div class="demo-container right">
+                    <div class="demo-outer">
+                        <div class="demo-wrapper" onscroll="updateMock()">
+                            <div class="demo-content"></div>
+                            <div class="mock-content">Content</div>
+                            <div class="client-width"><p class="width-text">clientWidth: </p></div>
+                            <div class="offset-width"><p class="width-text">offsetWidth: </p></div>
+                            <div class="scroll-width"><p class="width-text">scrollWidth: </p></div>
+                            <div class="client-height">clientHeight: </div>
+                            <div class="offset-height">offsetHeight: </div>
+                            <div class="scroll-height">scrollHeight: </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
+                
         </section>
             
         <footer></footer>
