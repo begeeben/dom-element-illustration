@@ -33,15 +33,22 @@
 
         <section class="demo">
             <div class="settings-panel left">
-                <h1>Dimensions</h1>
+                <h1>Properties</h1>
                 <ul class="settings">
                     <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
                     <li><button onclick="toggleLongContent();">Toggle Long Content</button></li>
+                    <li>box-sizing:</li>
+                    <li>margin: <span id="margin-value">50</span>px<br><input id="margin-slider" type="range" min="50" max="200" value="50" step="1" /></li>
+                    <li>padding: <span id="padding-value">50</span>px<br><input id="padding-slider" type="range" min="50" max="200" value="50" step="1" /></li>
+                    <li>width: <span id="width-value">50</span>px<br><input id="width-slider" type="range" min="50" max="200" step="1" /></li>
+                    <li>height: <span id="height-value">50</span>px<br><input id="height-slider" type="range" min="50" max="200" step="1" /></li>
                 </ul>
                 <h1>Views</h1>
                 <ul class="view-settings">
                     <li><button onclick="toggleHeight();">Toggle Height</button></li>
                     <li><button onclick="toggleWidth();">Toggle Width</button></li>
+                    <li><button onclick="toggleLeft();">Toggle Left</button></li>
+                    <li><button onclick="toggleRight();">Toggle Right</button></li>
                 </ul>
             </div>
             <!-- <div class="right"> -->
