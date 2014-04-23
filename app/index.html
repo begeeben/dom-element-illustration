@@ -37,11 +37,15 @@
                 <ul class="settings">
                     <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
                     <li><button onclick="toggleLongContent();">Toggle Long Content</button></li>
-                    <li>box-sizing:</li>
-                    <li>margin: <span id="margin-value">50</span>px<br><input id="margin-slider" type="range" min="50" max="200" value="50" step="1" /></li>
-                    <li>padding: <span id="padding-value">50</span>px<br><input id="padding-slider" type="range" min="50" max="200" value="50" step="1" /></li>
-                    <li>width: <span id="width-value">50</span>px<br><input id="width-slider" type="range" min="50" max="200" step="1" /></li>
-                    <li>height: <span id="height-value">50</span>px<br><input id="height-slider" type="range" min="50" max="200" step="1" /></li>
+                    <li>box-sizing:<br>
+                        <input type="radio" name="box-sizing"> content-box<br>
+                        <input type="radio" name="box-sizing"> padding-box<br>
+                        <input type="radio" name="box-sizing" checked> border-box
+                    </li>
+                    <li>margin: <span id="margin-value">20</span>px<br><input id="margin-slider" type="range" min="20" max="100" value="20" step="1" /></li>
+                    <li>padding: <span id="padding-value">20</span>px<br><input id="padding-slider" type="range" min="20" max="100" value="20" step="1" /></li>
+                    <li>width: <span id="width-value">200</span>px<br><input id="width-slider" type="range" min="200" max="400" step="1" /></li>
+                    <li>height: <span id="height-value">200</span>px<br><input id="height-slider" type="range" min="200" max="400" step="1" /></li>
                 </ul>
                 <h1>Views</h1>
                 <ul class="view-settings">
