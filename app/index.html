@@ -33,19 +33,25 @@
 
         <section class="demo">
             <div class="settings-panel left">
-                <h1>Properties</h1>
+                <h1>Content Properties</h1>
                 <ul class="settings">
-                    <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
-                    <li><button onclick="toggleLongContent();">Toggle Long Content</button></li>
+                    <li>width: <span id="content-width-value">120</span>px<br><input id="content-width-slider" type="range" min="120" max="400" value="120" step="1" oninput="updateContentDimension('width', this.value)" /></li>
+                    <li>height: <span id="content-height-value">120</span>px<br><input id="content-height-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('height', this.value)" /></li>
+                </ul>
+                <h1>Container Properties</h1>
+                <ul class="settings">
+                    <!-- <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
+                    <li><button onclick="toggleLongContent();">Toggle Long Content</button></li> -->
                     <li>box-sizing:<br>
                         <input type="radio" name="box-sizing"> content-box<br>
                         <input type="radio" name="box-sizing"> padding-box<br>
                         <input type="radio" name="box-sizing" checked> border-box
                     </li>
-                    <li>margin: <span id="margin-value">20</span>px<br><input id="margin-slider" type="range" min="20" max="100" value="20" step="1" oninput="updateDimension('margin', this.value)" /></li>
-                    <li>padding: <span id="padding-value">20</span>px<br><input id="padding-slider" type="range" min="20" max="100" value="20" step="1" oninput="updateDimension('padding', this.value)" /></li>
-                    <li>width: <span id="width-value">200</span>px<br><input id="width-slider" type="range" min="200" max="400" step="1" oninput="updateDimension('width', this.value)" /></li>
-                    <li>height: <span id="height-value">200</span>px<br><input id="height-slider" type="range" min="200" max="400" step="1" oninput="updateDimension('height', this.value)" /></li>
+                    <li>margin: <span id="margin-value">20</span>px<br><input id="margin-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('margin', this.value)" /></li>
+                    <li>border-width: <span id="border-width-value">20</span>px<br><input id="border-width-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('border-width', this.value)" /></li>
+                    <li>padding: <span id="padding-value">20</span>px<br><input id="padding-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('padding', this.value)" /></li>
+                    <li>width: <span id="width-value">200</span>px<br><input id="width-slider" type="range" min="200" max="400" value="200" step="1" oninput="updateDimension('width', this.value)" /></li>
+                    <li>height: <span id="height-value">200</span>px<br><input id="height-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('height', this.value)" /></li>
                 </ul>
                 <h1>Views</h1>
                 <ul class="view-settings">
@@ -55,22 +61,22 @@
                     <li><button onclick="toggleRight();">Toggle Right</button></li>
                 </ul>
             </div>
-            <!-- <div class="right"> -->
-                <div class="demo-container right">
+            <div class="right">
+                <div class="demo-container">
                     <div class="demo-outer">
                         <div class="demo-wrapper" onscroll="updateMock()">
-                            <div class="demo-content"></div>
-                            <div class="mock-content">Content</div>
+                            <div class="demo-content"><!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. --></div>
                             <div class="client-width"><p class="width-text">clientWidth: </p></div>
                             <div class="offset-width"><p class="width-text">offsetWidth: </p></div>
                             <div class="scroll-width"><p class="width-text">scrollWidth: </p></div>
                             <div class="client-height">clientHeight: </div>
                             <div class="offset-height">offsetHeight: </div>
                             <div class="scroll-height">scrollHeight: </div>
+                            <div class="mock-content">Content</div>
                         </div>
                     </div>
                 </div>
-            <!-- </div> -->
+            </div>
                 
         </section>
             
