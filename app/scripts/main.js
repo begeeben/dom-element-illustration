@@ -5,8 +5,8 @@ var container, contentElement, wrapperElement,
 	// defaultScrollHeightElementWidth,
 	// defaultScrollWidthElementHeight,
 	clientWidthElement, offsetWidthElement, scrollWidthElement,
-	mockContentElement,
-	animationId;
+	mockContentElement;
+	// animationId;
 
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
@@ -15,33 +15,33 @@ var container, contentElement, wrapperElement,
 
 // MIT license
 
-(function() {
-	var lastTime = 0;
-	var vendors = ['ms', 'moz', 'webkit', 'o'];
-	for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-		window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
-		window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
-	}
+// (function() {
+// 	var lastTime = 0;
+// 	var vendors = ['ms', 'moz', 'webkit', 'o'];
+// 	for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+// 		window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+// 		window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+// 	}
 
-	if (!window.requestAnimationFrame) {
-		window.requestAnimationFrame = function(callback, element) {
-			var currTime = new Date().getTime();
-			var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-			var id = window.setTimeout(function() {
-					callback(currTime + timeToCall);
-				},
-				timeToCall);
-			lastTime = currTime + timeToCall;
-			return id;
-		};
-	}
+// 	if (!window.requestAnimationFrame) {
+// 		window.requestAnimationFrame = function(callback, element) {
+// 			var currTime = new Date().getTime();
+// 			var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+// 			var id = window.setTimeout(function() {
+// 					callback(currTime + timeToCall);
+// 				},
+// 				timeToCall);
+// 			lastTime = currTime + timeToCall;
+// 			return id;
+// 		};
+// 	}
 
-	if (!window.cancelAnimationFrame) {
-		window.cancelAnimationFrame = function(id) {
-			clearTimeout(id);
-		};
-	}
-}());
+// 	if (!window.cancelAnimationFrame) {
+// 		window.cancelAnimationFrame = function(id) {
+// 			clearTimeout(id);
+// 		};
+// 	}
+// }());
 
 // function addClass(el, className) {
 // 	if (el.classList) {
@@ -97,44 +97,50 @@ function getX(element, container) {
 function updateMock() {
 	var x = getX(contentElement, container),
 		y = getY(contentElement, container);
+	var wrapperX = getX(wrapperElement, container),
+		wrapperY = getY(wrapperElement, container);
 
 	var wrapperStyle = getComputedStyle(wrapperElement);
+	var paddingTop = parseInt(wrapperStyle.paddingTop);
+	var paddingLeft = paddingTop;
+	var marginTop = parseInt(wrapperStyle.marginTop);
+	var marginLeft = marginTop;
+	var borderTopWidth = parseInt(wrapperStyle.borderTopWidth);
+	var borderLeftWidth = borderTopWidth;
 
-	mockContentElement.style.top = y - parseInt(wrapperStyle.paddingTop) - wrapperElement.scrollTop + 'px';
-	mockContentElement.style.left = x - parseInt(wrapperStyle.paddingLeft) - wrapperElement.scrollLeft + 'px';
+	mockContentElement.style.top = y - paddingTop - wrapperElement.scrollTop + 'px';
+	mockContentElement.style.left = x - paddingLeft - wrapperElement.scrollLeft + 'px';
 	mockContentElement.style.borderWidth = wrapperStyle.padding;
 	if (wrapperElement.scrollWidth > wrapperElement.clientWidth) {
 		mockContentElement.style.borderRightWidth = 0;
 	}
 
-	// scrollHeightElement.style.top = y - parseInt(wrapperStyle.paddingTop) - wrapperElement.scrollTop + 'px';
 	scrollHeightElement.style.top = mockContentElement.style.top;
 	scrollHeightElement.style.left = mockContentElement.style.left;
-	scrollHeightElement.style.width = 680 + wrapperElement.scrollLeft - parseInt(wrapperStyle.marginLeft) - parseInt(wrapperStyle.borderLeftWidth) + 'px';
+	scrollHeightElement.style.width = 680 + wrapperElement.scrollLeft - marginLeft - borderLeftWidth + 'px';
 	scrollHeightElement.style.height = wrapperElement.scrollHeight + 'px';
 	scrollWidthElement.style.top = mockContentElement.style.top;
-	// scrollWidthElement.style.left = x - parseInt(wrapperStyle.paddingLeft) - wrapperElement.scrollLeft + 'px';
 	scrollWidthElement.style.left = mockContentElement.style.left;
 	scrollWidthElement.style.width = wrapperElement.scrollWidth + 'px';
-	scrollWidthElement.style.height = 460 + wrapperElement.scrollTop - parseInt(wrapperStyle.marginTop) - parseInt(wrapperStyle.borderTopWidth) + 'px';
+	scrollWidthElement.style.height = 460 + wrapperElement.scrollTop - marginTop - borderTopWidth + 'px';
 
-	clientHeightElement.style.top = y - parseInt(wrapperStyle.paddingTop) + 'px';
-	clientHeightElement.style.left = x - parseInt(wrapperStyle.paddingLeft)  + 'px';
-	clientHeightElement.style.width = 850  - parseInt(wrapperStyle.marginLeft) - parseInt(wrapperStyle.borderLeftWidth) + 'px';
+	clientHeightElement.style.top = y - paddingTop + 'px';
+	clientHeightElement.style.left = x - paddingLeft  + 'px';
+	clientHeightElement.style.width = 850  - marginLeft - borderLeftWidth + 'px';
 	clientHeightElement.style.height = wrapperElement.clientHeight + 'px';
-	clientWidthElement.style.top = y - parseInt(wrapperStyle.paddingTop) + 'px';
-	clientWidthElement.style.left = x - parseInt(wrapperStyle.paddingLeft) + 'px';
+	clientWidthElement.style.top = y - paddingTop + 'px';
+	clientWidthElement.style.left = x - paddingLeft + 'px';
 	clientWidthElement.style.width = wrapperElement.clientWidth + 'px';
-	clientWidthElement.style.height = 495 - parseInt(wrapperStyle.marginLeft) - parseInt(wrapperStyle.borderLeftWidth) + 'px';
+	clientWidthElement.style.height = 495 - marginLeft - borderTopWidth + 'px';
 
-	offsetHeightElement.style.top = getY(wrapperElement, container) + 'px';
-	offsetHeightElement.style.left = getX(wrapperElement, container) + 'px';
-	offsetHeightElement.style.width = 870 - parseInt(wrapperStyle.marginLeft) + 'px';
+	offsetHeightElement.style.top = wrapperY + 'px';
+	offsetHeightElement.style.left = wrapperX + 'px';
+	offsetHeightElement.style.width = 870 - marginLeft + 'px';
 	offsetHeightElement.style.height = wrapperElement.offsetHeight + 'px';
-	offsetWidthElement.style.top = getY(wrapperElement, container) + 'px';
-	offsetWidthElement.style.left = getX(wrapperElement, container) + 'px';
+	offsetWidthElement.style.top = wrapperY + 'px';
+	offsetWidthElement.style.left = wrapperX + 'px';
 	offsetWidthElement.style.width = wrapperElement.offsetWidth + 'px';
-	offsetWidthElement.style.height = 520 - parseInt(wrapperStyle.marginTop) + 'px';
+	offsetWidthElement.style.height = 520 - marginTop + 'px';
 }
 
 function updateInfo() {
@@ -161,11 +167,11 @@ function toggleHeight() {
 	toggleClass(scrollHeightElement, 'is-hidden');
 }
 
-function update() {
-	updateInfo();
-	// updateMock();
-	animationId = requestAnimationFrame(update);
-}
+// function update() {
+// 	updateInfo();
+// 	// updateMock();
+// 	animationId = requestAnimationFrame(update);
+// }
 
 function updateDimension(prop, value) {
 	wrapperElement.style[prop] = value + 'px';
@@ -183,14 +189,14 @@ function updateContentDimension(prop, value) {
 }
 
 function toggleWideContent() {
-	toggleClass(wrapperElement, 'wide');
+	// toggleClass(wrapperElement, 'wide');
 	updateMock();
 	// cancelAnimationFrame(animationId);
 	// animationId = requestAnimationFrame(update);
 }
 
 function toggleLongContent() {
-	toggleClass(wrapperElement, 'long');
+	// toggleClass(wrapperElement, 'long');
 	updateMock();
 	// cancelAnimationFrame(animationId);
 	// animationId = requestAnimationFrame(update);
