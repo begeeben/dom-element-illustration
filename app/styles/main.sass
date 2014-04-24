@@ -31,7 +31,7 @@ $scroll-bar-width: 15px
 
 $transition-duration: .4s
 
-%sizing-transition
+// %sizing-transition
     // @include transition-property(height, width)
     // @include transition-duration($transition-duration)
     // @include transition-timing-function(ease-in)
@@ -71,8 +71,8 @@ div
     display: inline-block
     // border: solid 1px black
     position: relative
-    top: 50px
-    left: 50px
+    top: 100px
+    left: 100px
     background-color: $margin-color
 
 .demo-wrapper
@@ -93,7 +93,7 @@ div
         height: 100%
         background-color: #fff
 
-        @extend %sizing-transition
+        // @extend %sizing-transition
 
     .mock-content
         box-sizing: content-box
@@ -107,7 +107,7 @@ div
         background-color: #a3c3d4
         border: $default-wrapper-padding $padding-color solid
         opacity: .6
-        @extend %sizing-transition
+        // @extend %sizing-transition
 
     .client-height
         // width: $default-content-wide-width + 220px
@@ -119,7 +119,7 @@ div
         color: $client-text-color
         pointer-events: none
         @extend %height-marker
-        @extend %sizing-transition
+        // @extend %sizing-transition
 
     .offset-height
         // width: $default-content-wide-width + 220px
@@ -159,7 +159,7 @@ div
         color: $client-text-color
         pointer-events: none
         @extend %height-marker
-        @extend %sizing-transition
+        // @extend %sizing-transition
 
     .offset-width
         // width: $default-wrapper-width

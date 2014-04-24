@@ -117,30 +117,30 @@ function updateMock() {
 
 	scrollHeightElement.style.top = mockContentElement.style.top;
 	scrollHeightElement.style.left = mockContentElement.style.left;
-	scrollHeightElement.style.width = 680 + wrapperElement.scrollLeft - marginLeft - borderLeftWidth + 'px';
+	scrollHeightElement.style.width = 580 + wrapperElement.scrollLeft - marginLeft - borderLeftWidth + 'px';
 	scrollHeightElement.style.height = wrapperElement.scrollHeight + 'px';
 	scrollWidthElement.style.top = mockContentElement.style.top;
 	scrollWidthElement.style.left = mockContentElement.style.left;
 	scrollWidthElement.style.width = wrapperElement.scrollWidth + 'px';
-	scrollWidthElement.style.height = 460 + wrapperElement.scrollTop - marginTop - borderTopWidth + 'px';
+	scrollWidthElement.style.height = 410 + wrapperElement.scrollTop - marginTop - borderTopWidth + 'px';
 
 	clientHeightElement.style.top = y - paddingTop + 'px';
 	clientHeightElement.style.left = x - paddingLeft  + 'px';
-	clientHeightElement.style.width = 850  - marginLeft - borderLeftWidth + 'px';
+	clientHeightElement.style.width = 750  - marginLeft - borderLeftWidth + 'px';
 	clientHeightElement.style.height = wrapperElement.clientHeight + 'px';
 	clientWidthElement.style.top = y - paddingTop + 'px';
 	clientWidthElement.style.left = x - paddingLeft + 'px';
 	clientWidthElement.style.width = wrapperElement.clientWidth + 'px';
-	clientWidthElement.style.height = 495 - marginLeft - borderTopWidth + 'px';
+	clientWidthElement.style.height = 445 - marginLeft - borderTopWidth + 'px';
 
 	offsetHeightElement.style.top = wrapperY + 'px';
 	offsetHeightElement.style.left = wrapperX + 'px';
-	offsetHeightElement.style.width = 870 - marginLeft + 'px';
+	offsetHeightElement.style.width = 770 - marginLeft + 'px';
 	offsetHeightElement.style.height = wrapperElement.offsetHeight + 'px';
 	offsetWidthElement.style.top = wrapperY + 'px';
 	offsetWidthElement.style.left = wrapperX + 'px';
 	offsetWidthElement.style.width = wrapperElement.offsetWidth + 'px';
-	offsetWidthElement.style.height = 520 - marginTop + 'px';
+	offsetWidthElement.style.height = 470 - marginTop + 'px';
 }
 
 function updateInfo() {
