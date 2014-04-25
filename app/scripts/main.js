@@ -203,10 +203,10 @@ function toggleLongContent() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-	container = document.querySelector('.demo-outer');
-	contentElement = document.querySelector('.demo-content');
+	container = document.querySelector('.margin-layer');
+	contentElement = document.querySelector('.content-layer');
 	mockContentElement = document.querySelector('.mock-content');
-	wrapperElement = document.querySelector('.demo-wrapper');
+	wrapperElement = document.querySelector('.element-layer');
 	clientHeightElement = document.querySelector('.client-height');
 	offsetHeightElement = document.querySelector('.offset-height');
 	scrollHeightElement = document.querySelector('.scroll-height');

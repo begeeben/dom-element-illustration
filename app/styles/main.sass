@@ -65,17 +65,17 @@ div
 .demo-container
     position: relative
 
-.demo-outer
-    // margin: 1rem
-    // float: left
-    display: inline-block
-    // border: solid 1px black
-    position: relative
-    top: 100px
-    left: 100px
-    background-color: $margin-color
+    .margin-layer
+        // margin: 1rem
+        // float: left
+        display: inline-block
+        // border: solid 1px black
+        position: relative
+        top: 100px
+        left: 100px
+        background-color: $margin-color
 
-.demo-wrapper
+.element-layer
     width: $default-wrapper-width
     height: $default-wrapper-height
     margin: $default-wrapper-margin
@@ -85,7 +85,7 @@ div
     border-width: $default-wrapper-border-width
     overflow: auto
 
-    .demo-content
+    .content-layer
         // float: left
         min-width: 120px
         min-height: 120px
