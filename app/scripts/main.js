@@ -100,6 +100,8 @@ function updateMock(wrapperStyle) {
 	var wrapperX = getX(wrapperElement, container),
 		wrapperY = getY(wrapperElement, container);
 
+	wrapperStyle = wrapperStyle || getComputedStyle(wrapperElement);
+
 	var paddingTop = parseInt(wrapperStyle.paddingTop);
 	var paddingLeft = paddingTop;
 	var marginTop = parseInt(wrapperStyle.marginTop);
@@ -107,19 +109,21 @@ function updateMock(wrapperStyle) {
 	var borderTopWidth = parseInt(wrapperStyle.borderTopWidth);
 	var borderLeftWidth = borderTopWidth;
 
-	mockContentElement.style.top = y - paddingTop - wrapperElement.scrollTop + 'px';
-	mockContentElement.style.left = x - paddingLeft - wrapperElement.scrollLeft + 'px';
+	mockContentElement.style.top = y - wrapperElement.scrollTop + 'px';
+	mockContentElement.style.left = x - wrapperElement.scrollLeft + 'px';
+	mockContentElement.style.width = parseInt(contentElement.style.width) - 2 * 16 + 'px';
+	mockContentElement.style.height = parseInt(contentElement.style.height) - 2 * 16 + 'px';
 	mockContentElement.style.borderWidth = wrapperStyle.padding;
 	if (wrapperElement.scrollWidth > wrapperElement.clientWidth) {
 		mockContentElement.style.borderRightWidth = 0;
 	}
 
-	scrollHeightElement.style.top = mockContentElement.style.top;
-	scrollHeightElement.style.left = mockContentElement.style.left;
+	scrollHeightElement.style.top = y - paddingTop - wrapperElement.scrollTop + 'px';
+	scrollHeightElement.style.left = x - paddingLeft - wrapperElement.scrollLeft + 'px';
 	scrollHeightElement.style.width = 580 + wrapperElement.scrollLeft - marginLeft - borderLeftWidth + 'px';
 	scrollHeightElement.style.height = wrapperElement.scrollHeight + 'px';
-	scrollWidthElement.style.top = mockContentElement.style.top;
-	scrollWidthElement.style.left = mockContentElement.style.left;
+	scrollWidthElement.style.top = scrollHeightElement.style.top
+	scrollWidthElement.style.left = scrollHeightElement.style.left
 	scrollWidthElement.style.width = wrapperElement.scrollWidth + 'px';
 	scrollWidthElement.style.height = 410 + wrapperElement.scrollTop - marginTop - borderTopWidth + 'px';
 
@@ -181,16 +185,25 @@ function updateDimension(prop, value) {
 	document.querySelector('#' + prop + '-value').innerHTML = value;
 	updateMock(wrapperStyle);
 	updateInfo(wrapperStyle);
+	// syncContentDimension();
 }
 
 function updateContentDimension(prop, value) {
 	var wrapperStyle = getComputedStyle(wrapperElement);
 	contentElement.style[prop] = value + 'px';
-	mockContentElement.style[prop] = value - 2 * 16 + 'px';
+	// mockContentElement.style[prop] = value - 2 * 16 + 'px';
 	document.querySelector('#content-' + prop + '-value').innerHTML = value;
 	updateMock(wrapperStyle);
 	updateInfo(wrapperStyle);
 }
+
+// function syncContentDimension() {
+// 	var wrapperStyle = getComputedStyle(wrapperElement);
+// 	var padding = parseInt(wrapperStyle.padding);
+// 	if (wrapperElement.scrollWidth===wrapperElement.clientWidth && wrapperElement.scrollWidth>contentElement.offsetWidth + 2 * padding) {
+// 		contentElement.style.width = wrapperElement.clientWidth - 2 * padding + 'px';
+// 	}
+// }
 
 function toggleWideContent() {
 	// toggleClass(wrapperElement, 'wide');
