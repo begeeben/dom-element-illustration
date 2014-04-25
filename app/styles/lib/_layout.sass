@@ -1,13 +1,19 @@
-.left
-    // display: inline
-    // width: 30%
-    float: left
-    margin: 0 1rem
+.main
+    // width: 960px
+    margin: 0 auto
+    padding: 1rem 0
+    @include clearfix
 
-.right
-    // display: inline
-    float: left
-    min-width: 1000px
-    width: 80%
-    min-height: 585px
-    border: 2px solid #555
+    .left
+        // display: inline
+        // width: 30%
+        float: left
+        margin: 0 1rem
+
+    .right
+        // display: inline
+        float: left
+        min-width: 1000px
+        width: 80%
+        min-height: 585px
+        border: 2px solid #555

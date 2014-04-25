@@ -94,13 +94,12 @@ function getX(element, container) {
 	return x;
 }
 
-function updateMock() {
+function updateMock(wrapperStyle) {
 	var x = getX(contentElement, container),
 		y = getY(contentElement, container);
 	var wrapperX = getX(wrapperElement, container),
 		wrapperY = getY(wrapperElement, container);
 
-	var wrapperStyle = getComputedStyle(wrapperElement);
 	var paddingTop = parseInt(wrapperStyle.paddingTop);
 	var paddingLeft = paddingTop;
 	var marginTop = parseInt(wrapperStyle.marginTop);
@@ -143,9 +142,12 @@ function updateMock() {
 	offsetWidthElement.style.height = 470 - marginTop + 'px';
 }
 
-function updateInfo() {
-	clientHeightElement.innerHTML = 'clientHeight: ' + wrapperElement.clientHeight + 'px';
-	offsetHeightElement.innerHTML = 'offsetHeight: ' + wrapperElement.offsetHeight + 'px';
+function updateInfo(wrapperStyle) {
+	document.querySelector('.margin-marker').innerHTML = wrapperStyle.margin;
+	clientHeightElement.querySelector('.height-text').innerHTML = 'clientHeight: ' + wrapperElement.clientHeight + 'px';
+	clientHeightElement.querySelector('.padding-marker').innerHTML = wrapperStyle.padding;
+	offsetHeightElement.querySelector('.height-text').innerHTML = 'offsetHeight: ' + wrapperElement.offsetHeight + 'px';
+	offsetHeightElement.querySelector('.border-marker').innerHTML = wrapperStyle.borderWidth;
 	scrollHeightElement.innerHTML = 'scrollHeight: ' + wrapperElement.scrollHeight + 'px';
 
 	clientWidthElement.querySelector('.width-text').innerHTML = 'clientWidth: ' + wrapperElement.clientWidth + 'px';
@@ -175,17 +177,19 @@ function toggleHeight() {
 
 function updateDimension(prop, value) {
 	wrapperElement.style[prop] = value + 'px';
+	var wrapperStyle = getComputedStyle(wrapperElement);
 	document.querySelector('#' + prop + '-value').innerHTML = value;
-	updateMock();
-	updateInfo();
+	updateMock(wrapperStyle);
+	updateInfo(wrapperStyle);
 }
 
 function updateContentDimension(prop, value) {
+	var wrapperStyle = getComputedStyle(wrapperElement);
 	contentElement.style[prop] = value + 'px';
 	mockContentElement.style[prop] = value - 2 * 16 + 'px';
 	document.querySelector('#content-' + prop + '-value').innerHTML = value;
-	updateMock();
-	updateInfo();
+	updateMock(wrapperStyle);
+	updateInfo(wrapperStyle);
 }
 
 function toggleWideContent() {
@@ -217,8 +221,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	// defaultScrollHeightElementWidth = parseInt(getComputedStyle(scrollHeightElement).width);
 	// defaultScrollWidthElementHeight = parseInt(getComputedStyle(scrollWidthElement).height);
 
-	updateInfo();
-	updateMock();
+	var wrapperStyle = getComputedStyle(wrapperElement);
+	updateMock(wrapperStyle);
+	updateInfo(wrapperStyle);
 
 	// wrapperElement.addEventListener('transitionend', function() {
 	// 	console.debug('transition end');

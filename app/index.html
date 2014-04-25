@@ -31,7 +31,7 @@
             <h1>DOM Element Dimensions</h1>
         </header>
 
-        <section class="demo">
+        <section class="main">
             <div class="settings-panel left">
                 <h1>Content Properties</h1>
                 <ul class="settings">
@@ -78,12 +78,13 @@
             <div class="right">
                 <div class="demo-container">
                     <div class="margin-layer">
+                        <div class="margin-marker">20px</div>
                         <div class="element-layer" onscroll="updateMock()">
                             <div class="content-layer"><!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. --></div>
                             <div class="offset-width"><p class="width-text">offsetWidth: </p></div>
-                            <div class="offset-height">offsetHeight: </div>
+                            <div class="offset-height"><p class="border-marker">20px</p><p class="height-text">offsetHeight: </p></div>
                             <div class="client-width"><p class="width-text">clientWidth: </p></div>
-                            <div class="client-height">clientHeight: </div>
+                            <div class="client-height"><p class="padding-marker">20px</p><p class="height-text">clientHeight: </p></div>
                             <div class="scroll-width"><p class="width-text">scrollWidth: </p></div>
                             <div class="scroll-height">scrollHeight: </div>
                             <div class="mock-content">Content</div>

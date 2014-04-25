@@ -2,6 +2,7 @@
 // endbower
 @import "compass/reset"
 @import "compass/css3"
+@import "compass/utilities/general/clearfix"
 
 @import "lib/header"
 @import "lib/layout"
@@ -57,11 +58,6 @@ div
     color: #000
     padding: 0.2em 0
 
-.demo
-    // width: 960px
-    margin: 0 auto
-    padding: 1rem 0
-
 .demo-container
     position: relative
 
@@ -75,7 +71,14 @@ div
         left: 100px
         background-color: $margin-color
 
+        .margin-marker
+            position: absolute
+            color: #c19656
+            top: 2px
+            left: 2px
+
 .element-layer
+    // position: relative
     width: $default-wrapper-width
     height: $default-wrapper-height
     margin: $default-wrapper-margin
@@ -121,6 +124,10 @@ div
         @extend %height-marker
         // @extend %sizing-transition
 
+        .padding-marker
+            float: left
+            margin-left: 4px
+
     .offset-height
         // width: $default-content-wide-width + 220px
         // height: $default-wrapper-height
@@ -131,6 +138,10 @@ div
         color: $offset-text-color
         pointer-events: none
         @extend %height-marker
+
+        .border-marker
+            float: left
+            margin-left: 2px
 
     .scroll-height
         pointer-events: none
