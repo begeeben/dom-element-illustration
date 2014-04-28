@@ -5,6 +5,8 @@ var container, contentElement, wrapperElement,
 	// defaultScrollHeightElementWidth,
 	// defaultScrollWidthElementHeight,
 	clientWidthElement, offsetWidthElement, scrollWidthElement,
+	clientTopElement, offsetTopElement, scrollTopElement,
+	clientLeftElement, offsetLeftElement, scrollLeftElement,
 	mockContentElement;
 	// animationId;
 
@@ -122,8 +124,8 @@ function updateMock(wrapperStyle) {
 	scrollHeightElement.style.left = x - paddingLeft - wrapperElement.scrollLeft + 'px';
 	scrollHeightElement.style.width = 580 + wrapperElement.scrollLeft - marginLeft - borderLeftWidth + 'px';
 	scrollHeightElement.style.height = wrapperElement.scrollHeight + 'px';
-	scrollWidthElement.style.top = scrollHeightElement.style.top
-	scrollWidthElement.style.left = scrollHeightElement.style.left
+	scrollWidthElement.style.top = scrollHeightElement.style.top;
+	scrollWidthElement.style.left = scrollHeightElement.style.left;
 	scrollWidthElement.style.width = wrapperElement.scrollWidth + 'px';
 	scrollWidthElement.style.height = 410 + wrapperElement.scrollTop - marginTop - borderTopWidth + 'px';
 
@@ -144,6 +146,31 @@ function updateMock(wrapperStyle) {
 	offsetWidthElement.style.left = wrapperX + 'px';
 	offsetWidthElement.style.width = wrapperElement.offsetWidth + 'px';
 	offsetWidthElement.style.height = 470 - marginTop + 'px';
+
+	clientTopElement.style.top = wrapperY + 'px';
+	clientTopElement.querySelector('.client-top-marker').style.width = 40 + marginLeft + 'px';
+	clientTopElement.querySelector('.client-top-marker').style.height = wrapperElement.clientTop + 'px';
+
+	offsetTopElement.querySelector('.offset-top-marker').style.height = wrapperElement.offsetTop + 'px';
+
+	scrollTopElement.style.top = scrollHeightElement.style.top;
+	scrollTopElement.querySelector('.scroll-top-marker').style.width = 180 + marginLeft + borderLeftWidth + 'px';
+	scrollTopElement.querySelector('.scroll-top-marker').style.height = wrapperElement.scrollTop + 'px';
+
+	clientLeftElement.style.left = wrapperX + 'px';
+	clientLeftElement.querySelector('.client-left-marker').style.width = wrapperElement.clientLeft + 'px';
+	clientLeftElement.querySelector('.client-left-marker').style.height = 30 + marginTop + 'px';
+
+	offsetLeftElement.style.left = wrapperX - marginLeft + 'px';
+	offsetLeftElement.querySelector('.offset-left-marker').style.width = wrapperElement.offsetLeft + 'px';
+	// offsetLeftElement.querySelector('.offset-left-marker').style.height = 30 + marginTop + 'px';
+
+	scrollLeftElement.style.left = scrollWidthElement.style.left;
+	scrollLeftElement.querySelector('.scroll-left-marker').style.width = wrapperElement.scrollLeft + 'px';
+	scrollLeftElement.querySelector('.scroll-left-marker').style.height = 92 + marginTop + borderTopWidth + 'px';
+
+	scrollTopElement.querySelector('.top-text').innerHTML = 'scrollTop: ' + wrapperElement.scrollTop + 'px';
+	scrollLeftElement.querySelector('.left-text').innerHTML = 'scrollLeft: ' + wrapperElement.scrollLeft + 'px';
 }
 
 function updateInfo(wrapperStyle) {
@@ -157,6 +184,12 @@ function updateInfo(wrapperStyle) {
 	clientWidthElement.querySelector('.width-text').innerHTML = 'clientWidth: ' + wrapperElement.clientWidth + 'px';
 	offsetWidthElement.querySelector('.width-text').innerHTML = 'offsetWidth: ' + wrapperElement.offsetWidth + 'px';
 	scrollWidthElement.querySelector('.width-text').innerHTML = 'scrollWidth: ' + wrapperElement.scrollWidth + 'px';
+
+	clientLeftElement.querySelector('.left-text').innerHTML = 'clientLeft: ' + wrapperElement.clientLeft + 'px';
+	offsetLeftElement.querySelector('.left-text').innerHTML = 'offsetLeft: ' + wrapperElement.offsetLeft + 'px';
+
+	clientTopElement.querySelector('.top-text').innerHTML = 'clientTop: ' + wrapperElement.clientTop + 'px';
+	offsetTopElement.querySelector('.top-text').innerHTML = 'offsetTop: ' + wrapperElement.offsetTop + 'px';
 
 	// updateMock();
 }
@@ -230,6 +263,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	clientWidthElement = document.querySelector('.client-width');
 	offsetWidthElement = document.querySelector('.offset-width');
 	scrollWidthElement = document.querySelector('.scroll-width');
+	clientTopElement = document.querySelector('.client-top');
+	offsetTopElement = document.querySelector('.offset-top');
+	scrollTopElement = document.querySelector('.scroll-top');
+	clientLeftElement = document.querySelector('.client-left');
+	offsetLeftElement = document.querySelector('.offset-left');
+	scrollLeftElement = document.querySelector('.scroll-left');
 
 	// defaultScrollHeightElementWidth = parseInt(getComputedStyle(scrollHeightElement).width);
 	// defaultScrollWidthElementHeight = parseInt(getComputedStyle(scrollWidthElement).height);

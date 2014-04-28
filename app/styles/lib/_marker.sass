@@ -1,0 +1,90 @@
+$highlight-border-style: .2rem solid
+
+@mixin marker($border-color)
+	border: 2px dashed $border-color
+
+.client-top, .offset-top, .scroll-top,
+.client-left, .offset-left, .scroll-left
+	position: absolute
+
+.client-top-marker, .offset-top-marker, .scroll-top-marker, .top-text
+	display: inline-block
+	// float: right
+	vertical-align: top
+
+.client-top
+	top: 0
+	left: -150px
+	color: $offset-text-color
+
+.client-top-marker
+	width: 40px
+	height: 40px
+	@include marker($border-color)
+	border-left: $highlight-border-style $border-color
+
+.offset-top
+	top: 0
+	left: -170px
+	color: $margin-text-color
+
+.offset-top-marker
+	width: 55px
+	height: 20px
+	@include marker($margin-color)
+	border-left: $highlight-border-style $margin-color
+	border-right: none
+
+.scroll-top
+	top: 40px
+	left: -300px
+	color: $scroll-text-color
+
+	.top-text
+		text-align: right
+		width: 118px
+
+.scroll-top-marker
+	width: 220px
+	height: 20px
+	@include marker($scroll-color)
+	border-left: $highlight-border-style $scroll-color
+	border-right: none
+
+.client-left
+	top: -46px
+	left: 20px
+	color: $offset-text-color
+
+.client-left-marker
+	width: 20px
+	height: 50px
+	@include marker($border-color)
+	border-top: $highlight-border-style $border-color
+	border-bottom: none
+
+
+.offset-left
+	top: -76px
+	left: 0
+	color: $margin-text-color
+
+.offset-left-marker
+	width: 20px
+	height: 60px
+	@include marker($margin-color)
+	border-top: $highlight-border-style $margin-color
+	border-bottom: none
+
+
+.scroll-left
+	top: -106px
+	left: 40px
+	color: $scroll-text-color
+
+.scroll-left-marker
+	width: 0
+	height: 92px
+	@include marker($scroll-color)
+	border-top: $highlight-border-style $scroll-color
+	border-bottom: none

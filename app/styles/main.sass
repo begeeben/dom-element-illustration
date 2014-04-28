@@ -4,14 +4,10 @@
 @import "compass/css3"
 @import "compass/utilities/general/clearfix"
 
-@import "lib/header"
-@import "lib/layout"
-@import "lib/footer"
-@import "lib/settings_panel"
-
-$margin-color: #ebc385
 $border-color: #f1d781
+$margin-color: #ebc385
 $padding-color: #b4c66f
+$margin-text-color: #cba365
 $offset-text-color: #b09640
 $client-text-color: #72842d
 $scroll-color: #aaa
@@ -31,6 +27,13 @@ $default-wrapper-padding: 20px
 $scroll-bar-width: 15px
 
 $transition-duration: .4s
+
+@import "lib/header"
+@import "lib/layout"
+@import "lib/footer"
+@import "lib/settings_panel"
+@import "lib/marker"
+
 
 // %sizing-transition
     // @include transition-property(height, width)
@@ -65,10 +68,10 @@ div
         // margin: 1rem
         // float: left
         display: inline-block
-        // border: solid 1px black
+        border: dashed 1px #555
         position: relative
-        top: 100px
-        left: 100px
+        top: 150px
+        left: 300px
         background-color: $margin-color
 
         .margin-marker
