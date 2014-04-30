@@ -2,129 +2,268 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>DOM Element Dimensions</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="/favicon.ico">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="styles/bootstrap-custom.css">
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-    </head>
-    <body>
-        <!--[if lt IE 10]>
+<head>
+    <meta charset="utf-8">
+    <title>DOM Element Dimensions</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="styles/bootstrap-custom.css">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header class="site-header">
-            <h1>DOM Element Dimensions</h1>
-        </header>
+    <header class="site-header">
+        <h1>DOM Element Dimensions</h1>
+    </header>
 
-        <section class="main">
-            <div class="settings-panel left">
-                <h1>Content Properties</h1>
-                <ul class="settings">
-                    <li>width: <span id="content-width-value">120</span>px<br>
-                        <input id="content-width-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('width', this.value)" />
-                    </li>
-                    <li>height: <span id="content-height-value">120</span>px<br>
-                        <input id="content-height-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('height', this.value)" />
-                    </li>
-                </ul>
-                <h1>Container Properties</h1>
-                <ul class="settings">
-                    <!-- <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
-                    <li><button onclick="toggleLongContent();">Toggle Long Content</button></li> -->
-                    <li>box-sizing:<br>
-                        <input type="radio" name="box-sizing"> content-box<br>
-                        <!-- <input type="radio" name="box-sizing"> padding-box<br> -->
-                        <input type="radio" name="box-sizing" checked> border-box
-                    </li>
-                    <li>margin: <span id="margin-value">20</span>px<br>
-                        <input id="margin-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('margin', this.value)" />
-                    </li>
-                    <li>border-width: <span id="border-width-value">20</span>px<br>
-                        <input id="border-width-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('border-width', this.value)" />
-                    </li>
-                    <li>padding: <span id="padding-value">20</span>px<br>
-                        <input id="padding-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('padding', this.value)" />
-                    </li>
-                    <li>width: <span id="width-value">200</span>px<br>
-                        <input id="width-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('width', this.value)" />
-                    </li>
-                    <li>height: <span id="height-value">200</span>px<br>
-                        <input id="height-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('height', this.value)" />
-                    </li>
-                </ul>
-                <h1>Views</h1>
-                <ul class="view-settings">
-                    <li><button onclick="toggleHeight();">Toggle Height</button></li>
-                    <li><button onclick="toggleWidth();">Toggle Width</button></li>
-                    <li><button onclick="toggleLeft();">Toggle Left</button></li>
-                    <li><button onclick="toggleRight();">Toggle Right</button></li>
-                </ul>
+    <section class="main">
+        <div class="settings-panel left">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#basic-settings" data-toggle="tab">basic settings</a>
+                </li>
+                <li><a href="#advance-settings" data-toggle="tab">advance settings</a>
+                </li>
+                <li><a href="#view-properties" data-toggle="tab">view properties</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="basic-settings">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-warning">
+                            <input type="radio" name="options" id="no-scroll" checked>no-scroll
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="radio" name="options" id="vertical-scroll">vertical scroll
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="radio" name="options" id="horizontal-scroll">horizontal-scroll
+                        </label>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="advance-settings">
+                    <h1>Content Size</h1>
+                    <ul class="settings">
+                        <li>width:
+                            <span id="content-width-value">120</span>px
+                            <br>
+                            <input id="content-width-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('width', this.value)" />
+                        </li>
+                        <li>height:
+                            <span id="content-height-value">120</span>px
+                            <br>
+                            <input id="content-height-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('height', this.value)" />
+                        </li>
+                    </ul>
+                    <h1>Properties</h1>
+                    <ul class="settings">
+                        <!-- <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
+                            <li><button onclick="toggleLongContent();">Toggle Long Content</button></li> -->
+                        <li>box-sizing:
+                            <br>
+                            <input type="radio" name="box-sizing">content-box
+                            <br>
+                            <!-- <input type="radio" name="box-sizing"> padding-box<br> -->
+                            <input type="radio" name="box-sizing" checked>border-box
+                        </li>
+                        <li>margin:
+                            <span id="margin-value">20</span>px
+                            <br>
+                            <input id="margin-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('margin', this.value)" />
+                        </li>
+                        <li>border-width:
+                            <span id="border-width-value">20</span>px
+                            <br>
+                            <input id="border-width-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('border-width', this.value)" />
+                        </li>
+                        <li>padding:
+                            <span id="padding-value">20</span>px
+                            <br>
+                            <input id="padding-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('padding', this.value)" />
+                        </li>
+                        <li>width:
+                            <span id="width-value">200</span>px
+                            <br>
+                            <input id="width-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('width', this.value)" />
+                        </li>
+                        <li>height:
+                            <span id="height-value">200</span>px
+                            <br>
+                            <input id="height-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('height', this.value)" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="view-properties">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-warning">
+                            <input type="checkbox" checked> offsetTop
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> clientTop
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> scrollTop
+                        </label>
+                    </div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> offsetLeft
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> clientLeft
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> scrollLeft
+                        </label>
+                    </div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> offsetHeight
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> clientHeight
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> scrollHeight
+                        </label>
+                    </div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> offsetWidth
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> clientWidth
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox"> scrollWidth
+                        </label>
+                    </div>
+                    <!-- <h1>Views</h1>
+                    <ul class="view-settings">
+                        <li>
+                            <button class="btn btn-warning active" onclick="toggleHeight();">Toggle Height</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-warning" onclick="toggleWidth();">Toggle Width</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-warning" onclick="toggleLeft();">Toggle Left</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-warning" onclick="toggleRight();">Toggle Right</button>
+                        </li>
+                    </ul> -->
+                </div>
             </div>
-            <div class="right">
-                <div class="demo-container">
-                    <div class="margin-layer">
-                        <div class="margin-marker">20px</div>
-                        <div class="element-layer" onscroll="updateMock()">
-                            <div class="content-layer"><!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. --></div>
-                            <div class="scroll-top"><p class="top-text">scrollTop: </p> <div class="scroll-top-marker"></div></div>
-                            <div class="client-top"><p class="top-text">clientTop: </p> <div class="client-top-marker"></div></div>
-                            <div class="offset-top"><p class="top-text">offsetTop: </p> <div class="offset-top-marker"></div></div>
-                            <div class="scroll-left"><p class="left-text">scrollLeft: </p><div class="scroll-left-marker"></div></div>
-                            <div class="client-left"><p class="left-text">clientLeft: </p><div class="client-left-marker"></div></div>
-                            <div class="offset-left"><p class="left-text">offsetLeft: </p><div class="offset-left-marker"></div></div>
-                            <div class="offset-width"><p class="width-text">offsetWidth: </p></div>
-                            <div class="offset-height"><p class="border-marker">20px</p><p class="height-text">offsetHeight: </p></div>
-                            <div class="client-width"><p class="width-text">clientWidth: </p></div>
-                            <div class="client-height"><p class="padding-marker">20px</p><p class="height-text">clientHeight: </p></div>
-                            <div class="scroll-width"><p class="width-text">scrollWidth: </p></div>
-                            <div class="scroll-height">scrollHeight: </div>
-                            <div class="mock-content"></div>
+        </div>
+        <div class="right">
+            <div class="demo-container">
+                <div class="margin-layer">
+                    <div class="margin-marker">20px</div>
+                    <div class="element-layer" onscroll="updateMock()">
+                        <div class="content-layer"></div>
+                        <div class="scroll-top">
+                            <p class="top-text">scrollTop:</p>
+                            <div class="scroll-top-marker"></div>
                         </div>
+                        <div class="client-top">
+                            <p class="top-text">clientTop:</p>
+                            <div class="client-top-marker"></div>
+                        </div>
+                        <div class="offset-top">
+                            <p class="top-text">offsetTop:</p>
+                            <div class="offset-top-marker"></div>
+                        </div>
+                        <div class="scroll-left">
+                            <p class="left-text">scrollLeft:</p>
+                            <div class="scroll-left-marker"></div>
+                        </div>
+                        <div class="client-left">
+                            <p class="left-text">clientLeft:</p>
+                            <div class="client-left-marker"></div>
+                        </div>
+                        <div class="offset-left">
+                            <p class="left-text">offsetLeft:</p>
+                            <div class="offset-left-marker"></div>
+                        </div>
+                        <div class="offset-width">
+                            <p class="width-text">offsetWidth:</p>
+                        </div>
+                        <div class="offset-height">
+                            <p class="border-marker">20px</p>
+                            <p class="height-text">offsetHeight:</p>
+                        </div>
+                        <div class="client-width">
+                            <p class="width-text">clientWidth:</p>
+                        </div>
+                        <div class="client-height">
+                            <p class="padding-marker">20px</p>
+                            <p class="height-text">clientHeight:</p>
+                        </div>
+                        <div class="scroll-width">
+                            <p class="width-text">scrollWidth:</p>
+                        </div>
+                        <div class="scroll-height">scrollHeight:</div>
+                        <div class="mock-content"></div>
                     </div>
                 </div>
             </div>
-                
-        </section>
-            
-        <footer></footer>
-        
-        
-        <script src="bower_components/jquery/dist/jquery.js"></script>
+        </div>
 
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
-        
+    </section>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <footer></footer>
 
-          ga('create', 'UA-50388951-1', 'begeeben.net');
-          ga('send', 'pageview');
 
-        </script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-50388951-1', 'begeeben.net');
+    ga('send', 'pageview');
+    </script>
 
 </body>
+
 </html>

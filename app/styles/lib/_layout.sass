@@ -4,16 +4,25 @@
     padding: 1rem 0
     // @include clearfix
 
+    // @media screen and (min-width: 1280px)
+
     .left
-        // display: inline
+        display: inline-block
         // width: 30%
-        float: left
+        // float: left
         margin: 0 1rem
 
     .right
         // display: inline
-        float: left
+        // float: left
         min-width: 1000px
         width: 80%
         min-height: 620px
         // border: 2px solid #555
+
+@media screen and (min-width: 1280px)
+    .left
+        float: left
+
+    .right
+        float: left
