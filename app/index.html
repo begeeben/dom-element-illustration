@@ -21,10 +21,6 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-
-    <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
 </head>
 
 <body>
@@ -51,14 +47,14 @@
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="basic-settings">
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-warning">
-                            <input type="radio" name="options" id="no-scroll" checked>no-scroll
+                        <label class="btn btn-warning active">
+                            <input type="radio" name="options" id="no-scroll" checked>no scroll
                         </label>
                         <label class="btn btn-warning">
                             <input type="radio" name="options" id="vertical-scroll">vertical scroll
                         </label>
                         <label class="btn btn-warning">
-                            <input type="radio" name="options" id="horizontal-scroll">horizontal-scroll
+                            <input type="radio" name="options" id="horizontal-scroll">horizontal scroll
                         </label>
                     </div>
                 </div>
@@ -116,47 +112,47 @@
                 </div>
                 <div class="tab-pane fade" id="view-properties">
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-warning">
-                            <input type="checkbox" checked> offsetTop
+                        <label class="btn btn-warning active">
+                            <input type="checkbox" value="offset-top"> offsetTop
                         </label>
-                        <label class="btn btn-warning">
-                            <input type="checkbox"> clientTop
+                        <label class="btn btn-warning active">
+                            <input type="checkbox" value="client-top"> clientTop
                         </label>
-                        <label class="btn btn-warning">
-                            <input type="checkbox"> scrollTop
-                        </label>
-                    </div>
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-warning">
-                            <input type="checkbox"> offsetLeft
-                        </label>
-                        <label class="btn btn-warning">
-                            <input type="checkbox"> clientLeft
-                        </label>
-                        <label class="btn btn-warning">
-                            <input type="checkbox"> scrollLeft
+                        <label class="btn btn-warning active">
+                            <input type="checkbox" value="scroll-top"> scrollTop
                         </label>
                     </div>
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-warning">
-                            <input type="checkbox"> offsetHeight
+                            <input type="checkbox" value="offset-left"> offsetLeft
                         </label>
                         <label class="btn btn-warning">
-                            <input type="checkbox"> clientHeight
+                            <input type="checkbox" value="client-left"> clientLeft
                         </label>
                         <label class="btn btn-warning">
-                            <input type="checkbox"> scrollHeight
+                            <input type="checkbox" value="scroll-left"> scrollLeft
+                        </label>
+                    </div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-warning active">
+                            <input type="checkbox" value="offset-height"> offsetHeight
+                        </label>
+                        <label class="btn btn-warning active">
+                            <input type="checkbox" value="client-height"> clientHeight
+                        </label>
+                        <label class="btn btn-warning active">
+                            <input type="checkbox" value="scroll-height"> scrollHeight
                         </label>
                     </div>
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-warning">
-                            <input type="checkbox"> offsetWidth
+                            <input type="checkbox" value="offset-width"> offsetWidth
                         </label>
                         <label class="btn btn-warning">
-                            <input type="checkbox"> clientWidth
+                            <input type="checkbox" value="client-width"> clientWidth
                         </label>
                         <label class="btn btn-warning">
-                            <input type="checkbox"> scrollWidth
+                            <input type="checkbox" value="scroll-width"> scrollWidth
                         </label>
                     </div>
                     <!-- <h1>Views</h1>
@@ -195,33 +191,33 @@
                             <p class="top-text">offsetTop:</p>
                             <div class="offset-top-marker"></div>
                         </div>
-                        <div class="scroll-left">
+                        <div class="scroll-left is-hidden">
                             <p class="left-text">scrollLeft:</p>
                             <div class="scroll-left-marker"></div>
                         </div>
-                        <div class="client-left">
+                        <div class="client-left is-hidden">
                             <p class="left-text">clientLeft:</p>
                             <div class="client-left-marker"></div>
                         </div>
-                        <div class="offset-left">
+                        <div class="offset-left is-hidden">
                             <p class="left-text">offsetLeft:</p>
                             <div class="offset-left-marker"></div>
                         </div>
-                        <div class="offset-width">
+                        <div class="offset-width is-hidden">
                             <p class="width-text">offsetWidth:</p>
                         </div>
                         <div class="offset-height">
                             <p class="border-marker">20px</p>
                             <p class="height-text">offsetHeight:</p>
                         </div>
-                        <div class="client-width">
+                        <div class="client-width is-hidden">
                             <p class="width-text">clientWidth:</p>
                         </div>
                         <div class="client-height">
                             <p class="padding-marker">20px</p>
                             <p class="height-text">clientHeight:</p>
                         </div>
-                        <div class="scroll-width">
+                        <div class="scroll-width is-hidden">
                             <p class="width-text">scrollWidth:</p>
                         </div>
                         <div class="scroll-height">scrollHeight:</div>
@@ -244,7 +240,11 @@
     <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <!-- <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js"></script> -->
 
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

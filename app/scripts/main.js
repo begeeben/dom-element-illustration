@@ -285,4 +285,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	// animationId = requestAnimationFrame(update);
 
 	// wrapperElement.onscroll = updateMock;
+
+});
+
+$('#view-properties input:checkbox').on('change', function() {
+	// toggleClass(this, 'is-hidden');
+	$('.element-layer').find('.' + this.value).toggleClass('is-hidden');
 });
