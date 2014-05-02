@@ -27,6 +27,12 @@
     <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+    <!-- 
+
+        ... should've started this using Angular.js... damn...
+
+    -->
     <header class="site-header">
         <h1>DOM Element Dimensions</h1>
     </header>
@@ -48,13 +54,13 @@
                 <div class="tab-pane fade in active" id="basic-settings">
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-warning active">
-                            <input type="radio" name="options" id="no-scroll" checked>no scroll
+                            <input type="radio" name="options" id="no-scroll">no scroll bar
                         </label>
                         <label class="btn btn-warning">
-                            <input type="radio" name="options" id="vertical-scroll">vertical scroll
+                            <input type="radio" name="options" id="vertical-scroll">vertical scroll bar
                         </label>
                         <label class="btn btn-warning">
-                            <input type="radio" name="options" id="horizontal-scroll">horizontal scroll
+                            <input type="radio" name="options" id="horizontal-scroll">horizontal scroll bar
                         </label>
                     </div>
                 </div>
@@ -133,7 +139,7 @@
                     </ul>
                 </div>
                 <div class="tab-pane fade" id="view-properties">
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="btn-group horizontal-group" data-toggle="buttons">
                         <label class="btn btn-warning active">
                             <input type="checkbox" value="offset-top"> offsetTop
                         </label>
@@ -144,7 +150,7 @@
                             <input type="checkbox" value="scroll-top"> scrollTop
                         </label>
                     </div>
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="btn-group vertical-group" data-toggle="buttons">
                         <label class="btn btn-warning">
                             <input type="checkbox" value="offset-left"> offsetLeft
                         </label>
@@ -155,7 +161,7 @@
                             <input type="checkbox" value="scroll-left"> scrollLeft
                         </label>
                     </div>
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="btn-group vertical-group" data-toggle="buttons">
                         <label class="btn btn-warning active">
                             <input type="checkbox" value="offset-height"> offsetHeight
                         </label>
@@ -166,7 +172,7 @@
                             <input type="checkbox" value="scroll-height"> scrollHeight
                         </label>
                     </div>
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="btn-group horizontal-group" data-toggle="buttons">
                         <label class="btn btn-warning">
                             <input type="checkbox" value="offset-width"> offsetWidth
                         </label>

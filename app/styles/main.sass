@@ -4,9 +4,12 @@
 @import "compass/css3"
 @import "compass/utilities/general/clearfix"
 
+// @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap-custom"
+
 $border-color: #f1d781
 $margin-color: #ebc385
 $padding-color: #b4c66f
+$content-color: #a3c3d4
 $margin-text-color: #cba365
 $offset-text-color: #b09640
 $client-text-color: #72842d
@@ -44,6 +47,9 @@ $transition-duration: .4s
     position: absolute
     padding-right: 1rem
     text-align: right
+
+// html
+//     font-size: 100%
 
 body
     background: #fafafa
@@ -110,7 +116,7 @@ div
         padding: 1rem
         font-size: 1.2rem
         color: #406071
-        background-color: #a3c3d4
+        background-color: $content-color
         // border: $default-wrapper-padding $padding-color solid
         // border: $default-wrapper-padding transparent solid
         opacity: .6

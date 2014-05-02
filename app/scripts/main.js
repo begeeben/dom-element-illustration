@@ -288,7 +288,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+function resetDimensions() {
+	updateContentDimension('width', 120);
+	updateContentDimension('height', 120);
+	updateDimension('width', 200);
+	updateDimension('height', 200);
+	updateDimension('margin', 20);
+	updateDimension('border-width', 20);
+	updateDimension('padding', 20);
+	$('#content-width-slider').val(120);
+	$('#content-height-slider').val(120);
+	$('#width-slider').val(200);
+	$('#height-slider').val(200);
+	$('#margin-slider').val(20);
+	$('#border-width-slider').val(20);
+	$('#padding-slider').val(20);
+	$('#view-properties .btn-group label').addClass('active');
+}
+
 $('#view-properties input:checkbox').on('change', function() {
 	// toggleClass(this, 'is-hidden');
 	$('.element-layer').find('.' + this.value).toggleClass('is-hidden');
+});
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+	// e.target // activated tab
+	// e.relatedTarget // previous tab
+	if (e.target.hash === '#basic-settings') {
+		$('#basic-settings .btn-group label').removeClass('active');
+	}
+});
+
+$('#no-scroll').on('change', function() {
+	if (this.checked) {
+		resetDimensions();
+		$('.element-layer > div').removeClass('is-hidden');
+	}
+});
+
+$('#vertical-scroll').on('change', function() {
+	if (this.checked) {
+		resetDimensions();
+		updateContentDimension('height', 300);
+		$('#content-height-slider').val(300);
+		$('.element-layer > div').removeClass('is-hidden');
+		$('.element-layer').find('.offset-left, .client-left, .scroll-left, .offset-width, .client-width, .scroll-width').addClass('is-hidden');
+		$('#view-properties .horizontal-group label').removeClass('active');
+	}
+});
+
+$('#horizontal-scroll').on('change', function() {
+	if (this.checked) {
+		resetDimensions();
+		updateContentDimension('width', 300);
+		updateDimension('height', 215);
+		$('#content-width-slider').val(300);
+		$('#height-slider').val(215);
+		$('.element-layer > div').removeClass('is-hidden');
+		$('.element-layer').find('.offset-top, .client-top, .scroll-top, .offset-height, .client-height, .scroll-height').addClass('is-hidden');
+		$('#view-properties .vertical-group label').removeClass('active');
+	}
 });
