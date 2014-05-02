@@ -59,54 +59,51 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="advance-settings">
-                    <h1>Content Size</h1>
                     <ul class="settings">
-                        <li>width:
-                            <span id="content-width-value">120</span>px
-                            <br>
+                        <h1>Content Size</h1>
+                        <li><span class="label label-warning">width:</span>
                             <input id="content-width-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('width', this.value)" />
+                            <span id="content-width-value">120</span>px 
                         </li>
-                        <li>height:
-                            <span id="content-height-value">120</span>px
-                            <br>
+                        <li><span class="label label-warning">height:</span>
                             <input id="content-height-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('height', this.value)" />
+                            <span id="content-height-value">120</span>px
                         </li>
                     </ul>
-                    <h1>Properties</h1>
                     <ul class="settings">
                         <!-- <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
                             <li><button onclick="toggleLongContent();">Toggle Long Content</button></li> -->
-                        <li>box-sizing:
-                            <br>
+                        <!-- <li><span class="label label-warning">box-sizing:</span> -->
+                        box-sizing:
+                        <li>
                             <input type="radio" name="box-sizing">content-box
                             <br>
                             <!-- <input type="radio" name="box-sizing"> padding-box<br> -->
                             <input type="radio" name="box-sizing" checked>border-box
                         </li>
-                        <li>margin:
-                            <span id="margin-value">20</span>px
-                            <br>
+                    </ul>
+                    <ul class="settings">
+                        <li><span class="label label-warning">margin:</span>
                             <input id="margin-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('margin', this.value)" />
+                            <span id="margin-value">20</span>px
                         </li>
-                        <li>border-width:
-                            <span id="border-width-value">20</span>px
-                            <br>
+                        <li><span class="label label-warning">border-width:</span>
                             <input id="border-width-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('border-width', this.value)" />
+                            <span id="border-width-value">20</span>px
                         </li>
-                        <li>padding:
-                            <span id="padding-value">20</span>px
-                            <br>
+                        <li><span class="label label-warning">padding:</span>
                             <input id="padding-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('padding', this.value)" />
+                            <span id="padding-value">20</span>px
                         </li>
-                        <li>width:
-                            <span id="width-value">200</span>px
-                            <br>
+                    </ul>
+                    <ul class="settings">
+                        <li><span class="label label-warning">width:</span>
                             <input id="width-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('width', this.value)" />
+                            <span id="width-value">200</span>px
                         </li>
-                        <li>height:
-                            <span id="height-value">200</span>px
-                            <br>
+                        <li><span class="label label-warning">height:</span>
                             <input id="height-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('height', this.value)" />
+                            <span id="height-value">200</span>px
                         </li>
                     </ul>
                 </div>
