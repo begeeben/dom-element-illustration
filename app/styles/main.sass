@@ -22,10 +22,6 @@ $default-wrapper-height: 200px
 $default-wrapper-margin: 20px
 $default-wrapper-border-width: 20px
 $default-wrapper-padding: 20px
-// $default-content-fit-width: $default-wrapper-width - 2 * ($default-wrapper-border-width + $default-wrapper-padding)
-// $default-content-fit-height: $default-wrapper-height - 2 * ($default-wrapper-border-width + $default-wrapper-padding)
-// $default-content-wide-width: 200px
-// $default-content-long-height: 200px
 
 $scroll-bar-width: 15px
 
@@ -48,9 +44,6 @@ $transition-duration: .4s
     padding-right: 1rem
     text-align: right
 
-// html
-//     font-size: 100%
-
 body
     background: #fafafa
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -71,8 +64,6 @@ div
     position: relative
 
     .margin-layer
-        // margin: 1rem
-        // float: left
         display: inline-block
         border: dashed 1px #555
         position: relative
@@ -87,7 +78,6 @@ div
             left: 2px
 
 .element-layer
-    // position: relative
     width: $default-wrapper-width
     height: $default-wrapper-height
     margin: $default-wrapper-margin
@@ -98,14 +88,11 @@ div
     overflow: auto
 
     .content-layer
-        // float: left
         min-width: 120px
         min-height: 120px
         width: 120px
         height: 120px
         background-color: #fff
-
-        // @extend %sizing-transition
 
     .mock-content
         box-sizing: content-box
@@ -117,32 +104,20 @@ div
         font-size: 1.2rem
         color: #406071
         background-color: $content-color
-        // border: $default-wrapper-padding $padding-color solid
-        // border: $default-wrapper-padding transparent solid
         opacity: .6
-        // @extend %sizing-transition
 
     .client-height
-        // width: $default-content-wide-width + 220px
-        // height: $default-wrapper-height - 2 * $default-wrapper-border-width
-        // top: $default-wrapper-margin + $default-wrapper-border-width
-        // left: $default-wrapper-width + $default-wrapper-margin - $default-wrapper-border-width
         border: 2px dashed $padding-color
         border-right: .2rem solid $padding-color
         color: $client-text-color
         pointer-events: none
         @extend %height-marker
-        // @extend %sizing-transition
 
         .padding-marker
             float: left
             margin-left: 4px
 
     .offset-height
-        // width: $default-content-wide-width + 220px
-        // height: $default-wrapper-height
-        // top: $default-wrapper-margin
-        // left: $default-wrapper-margin + $default-wrapper-width
         border: 2px dashed $border-color
         border-right: .2rem solid $border-color
         color: $offset-text-color
@@ -155,38 +130,19 @@ div
 
     .scroll-height
         pointer-events: none
-        // width: $default-content-wide-width + 200px
-        // height: $default-wrapper-height - 2 * $default-wrapper-border-width
-        // top: $default-wrapper-margin + $default-wrapper-border-width
-        // left: $default-wrapper-margin + $default-wrapper-border-width
-        // padding-top: 1rem
-        // padding-left: 2rem
         border: 2px dashed $scroll-color
         border-right: .2rem solid $scroll-color
         color: $scroll-text-color
         @extend %height-marker
-        // @extend %sizing-transition
-        // @include transition-property(height)
-        // @include transition-duration($transition-duration)
-        // @include transition-timing-function(ease-in)
 
     .client-width
-        // width: $default-wrapper-width - 2 * $default-wrapper-border-width
-        // height: $default-content-long-height - 40px
-        // top:  $default-wrapper-height + $default-wrapper-margin - $default-wrapper-border-width
-        // left: $default-wrapper-margin + $default-wrapper-border-width
         border: 2px dashed $padding-color
         border-bottom: .2rem solid $padding-color
         color: $client-text-color
         pointer-events: none
         @extend %height-marker
-        // @extend %sizing-transition
 
     .offset-width
-        // width: $default-wrapper-width
-        // height: $default-content-long-height - 20px
-        // top: $default-wrapper-margin + $default-wrapper-width
-        // left: $default-wrapper-margin
         border: 2px dashed $border-color
         border-bottom: .2rem solid $border-color
         color: $offset-text-color
@@ -195,59 +151,12 @@ div
 
     .scroll-width
         pointer-events: none
-        // width: $default-wrapper-width - 2 * $default-wrapper-border-width
-        // height: $default-content-long-height + 80px
-        // top: $default-wrapper-margin + $default-wrapper-border-width
-        // left: $default-wrapper-margin + $default-wrapper-border-width
-        // padding-top: 1rem
-        // padding-left: 2rem
         border: 2px dashed $scroll-color
         border-bottom: .2rem solid $scroll-color
         color: $scroll-text-color
         @extend %height-marker
-        // @extend %sizing-transition
-        // @include transition-property(width)
-        // @include transition-duration($transition-duration)
-        // @include transition-timing-function(ease-in)
 
     .width-text
         position: absolute
         // right: 0
         bottom: 0
-
-    // &.wide
-    //     .demo-content
-    //         width: $default-content-wide-width
-
-    //     .mock-content
-    //         width: $default-content-wide-width + $default-wrapper-padding
-    //         height: $default-content-fit-height + 2 * $default-wrapper-padding - $scroll-bar-width
-    //         border-right: 0
-
-    //     .scroll-width
-    //         width: $default-content-wide-width + $default-wrapper-padding
-
-    //     .client-height, .scroll-height
-    //         height: $default-wrapper-height - 2 * $default-wrapper-border-width - $scroll-bar-width
-
-    // &.long
-    //     .demo-content
-    //         height: $default-content-long-height
-
-    //     .mock-content
-    //         width: $default-content-fit-width + 2 * $default-wrapper-padding - $scroll-bar-width
-    //         height: $default-content-long-height + 2 * $default-wrapper-padding
-
-    //     .scroll-height
-    //         height: $default-content-long-height + 2 * $default-wrapper-padding
-
-    //     .client-width, .scroll-width
-    //         width: $default-wrapper-width - 2 * $default-wrapper-border-width - $scroll-bar-width
-
-    // &.wide.long
-    //     .mock-content
-    //         width: $default-content-wide-width + $default-wrapper-padding
-    //         height: $default-content-long-height + 2 * $default-wrapper-padding
-
-    //     .scroll-width
-    //         width: $default-content-wide-width + $default-wrapper-padding

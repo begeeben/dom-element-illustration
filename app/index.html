@@ -66,15 +66,6 @@
                 </div>
                 <div class="tab-pane fade" id="advance-settings">
                     <ul>
-                        <!-- <li><button onclick="toggleWideContent();">Toggle Wide Content</button></li>
-                            <li><button onclick="toggleLongContent();">Toggle Long Content</button></li> -->
-                        <!-- <li><span class="label label-warning">box-sizing:</span> -->
-                        <!-- <li>
-                            <input type="radio" name="box-sizing">content-box
-                            <br>
-                            <input type="radio" name="box-sizing"> padding-box<br>
-                            <input type="radio" name="box-sizing" checked>border-box
-                        </li> -->
                         <span class="settings-title">box-sizing:</span>
                         <div class="btn-group box-sizing" data-toggle="buttons">
                           <label class="btn btn-default disabled">
@@ -89,13 +80,11 @@
                         </div>
                     </ul>
                     <ul class="settings">
-                        <!-- <li><span class="label label-warning">width:</span> -->
                         <li>
                             <p class="settings-label">width:</p>
                             <input id="width-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('width', this.value)" />
                             <span id="width-value">200</span>px
                         </li>
-                        <!-- <li><span class="label label-warning">height:</span> -->
                         <li>
                             <p class="settings-label">height:</p>
                             <input id="height-slider" type="range" min="200" max="300" value="200" step="1" oninput="updateDimension('height', this.value)" />
@@ -103,19 +92,16 @@
                         </li>
                     </ul>
                     <ul class="settings">
-                        <!-- <li><span class="label label-warning">margin:</span> -->
                         <li>
                             <p class="settings-label margin-color">margin:</p>
                             <input id="margin-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('margin', this.value)" />
                             <span id="margin-value">20</span>px
                         </li>
-                        <!-- <li><span class="label label-warning">border-width:</span> -->
                         <li>
                             <p class="settings-label border-color">border:</p>
                             <input id="border-width-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('border-width', this.value)" />
                             <span id="border-width-value">20</span>px
                         </li>
-                        <!-- <li><span class="label label-warning">padding:</span> -->
                         <li>
                             <p class="settings-label padding-color">padding:</p>
                             <input id="padding-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('padding', this.value)" />
@@ -123,14 +109,11 @@
                         </li>
                     </ul>
                     <ul class="settings">
-                    <!-- content size -->
-                        <!-- <li><span class="label label-warning">width:</span> -->
                         <li>
                             <p class="settings-label content-color">width:</p>
                             <input id="content-width-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('width', this.value)" />
                             <span id="content-width-value">120</span>px 
                         </li>
-                        <!-- <li><span class="label label-warning">height:</span> -->
                         <li>
                             <p class="settings-label content-color">height:</p>
                             <input id="content-height-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('height', this.value)" />
@@ -183,21 +166,6 @@
                             <input type="checkbox" value="scroll-width"> scrollWidth
                         </label>
                     </div>
-                    <!-- <h1>Views</h1>
-                    <ul class="view-settings">
-                        <li>
-                            <button class="btn btn-warning active" onclick="toggleHeight();">Toggle Height</button>
-                        </li>
-                        <li>
-                            <button class="btn btn-warning" onclick="toggleWidth();">Toggle Width</button>
-                        </li>
-                        <li>
-                            <button class="btn btn-warning" onclick="toggleLeft();">Toggle Left</button>
-                        </li>
-                        <li>
-                            <button class="btn btn-warning" onclick="toggleRight();">Toggle Right</button>
-                        </li>
-                    </ul> -->
                 </div>
             </div>
         </div>
