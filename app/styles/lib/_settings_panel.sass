@@ -4,18 +4,55 @@
     .tab-content
         border: 1px solid #dddddd
         border-top: transparent
-        padding: 1rem
+        padding: .5rem 1rem
         @include clearfix
+
+        .settings-title
+            font-weight: bold
+            line-height: 1.8rem
 
         .settings
             float: left
+            margin-top: .5rem
             margin-right: 1rem
 
             li
-                height: 1.6rem
+                // height: 1.6rem
+                margin: 2px
+
+
+            .settings-label
+                display: inline-block
+                color: #fff
+                font-size: 14px
+                text-align: center
+                padding: 6px 12px
+                width: 5rem
+                background-color: $scroll-color
+
+                &.content-color
+                    background-color: $content-color
+
+                &.margin-color
+                    background-color: $margin-color
+
+                &.border-color
+                    background-color: $border-color
+
+                &.padding-color
+                    background-color: $padding-color
 
             .label
                 width: 100px
+
+            // .box-sizing
+            //     display: block
+
+            //     .btn
+            //         width: 6.5rem
+            //         display: block
+            //         float: none
+            //         margin-left: 0
 
 //     // margin: 1rem 0
 
