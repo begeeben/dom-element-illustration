@@ -39,7 +39,7 @@
         <h1>DOM Element Dimensions</h1>
     </header>
 
-    <section class="main">
+    <div class="main">
         <div class="settings-panel left">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
@@ -47,7 +47,7 @@
                 </li>
                 <li><a href="#advance-settings" data-toggle="tab">advance</a>
                 </li>
-                <li><a href="#view-properties" data-toggle="tab">views</a>
+                <li><a href="#view-properties" data-toggle="tab">view</a>
                 </li>
             </ul>
 
@@ -68,7 +68,7 @@
                 </div>
                 <div class="tab-pane fade" id="advance-settings">
                     <ul>
-                        <span class="settings-title">box-sizing:</span>
+                        <span class="settings-title">box-sizing: </span>
                         <div class="btn-group box-sizing" data-toggle="buttons">
                           <label class="btn btn-default disabled">
                             <input type="radio" name="box-sizing" id="content-box"> content-box
@@ -96,17 +96,17 @@
                     <ul class="settings">
                         <li>
                             <p class="settings-label margin-color">margin:</p>
-                            <input id="margin-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('margin', this.value)" />
+                            <input id="margin-slider" type="range" min="0" max="40" value="20" step="1" oninput="updateDimension('margin', this.value)" />
                             <span id="margin-value">20</span>px
                         </li>
                         <li>
                             <p class="settings-label border-color">border:</p>
-                            <input id="border-width-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('border-width', this.value)" />
+                            <input id="border-width-slider" type="range" min="0" max="40" value="20" step="1" oninput="updateDimension('border-width', this.value)" />
                             <span id="border-width-value">20</span>px
                         </li>
                         <li>
                             <p class="settings-label padding-color">padding:</p>
-                            <input id="padding-slider" type="range" min="20" max="40" value="20" step="1" oninput="updateDimension('padding', this.value)" />
+                            <input id="padding-slider" type="range" min="0" max="40" value="20" step="1" oninput="updateDimension('padding', this.value)" />
                             <span id="padding-value">20</span>px
                         </li>
                     </ul>
@@ -189,33 +189,33 @@
                             <p class="top-text">offsetTop:</p>
                             <div class="offset-top-marker"></div>
                         </div>
-                        <div class="scroll-left is-hidden">
+                        <div class="scroll-left">
                             <p class="left-text">scrollLeft:</p>
                             <div class="scroll-left-marker"></div>
                         </div>
-                        <div class="client-left is-hidden">
+                        <div class="client-left">
                             <p class="left-text">clientLeft:</p>
                             <div class="client-left-marker"></div>
                         </div>
-                        <div class="offset-left is-hidden">
+                        <div class="offset-left">
                             <p class="left-text">offsetLeft:</p>
                             <div class="offset-left-marker"></div>
                         </div>
-                        <div class="offset-width is-hidden">
+                        <div class="offset-width">
                             <p class="width-text">offsetWidth:</p>
                         </div>
                         <div class="offset-height">
                             <p class="border-marker">20px</p>
                             <p class="height-text">offsetHeight:</p>
                         </div>
-                        <div class="client-width is-hidden">
+                        <div class="client-width">
                             <p class="width-text">clientWidth:</p>
                         </div>
                         <div class="client-height">
                             <p class="padding-marker">20px</p>
                             <p class="height-text">clientHeight:</p>
                         </div>
-                        <div class="scroll-width is-hidden">
+                        <div class="scroll-width">
                             <p class="width-text">scrollWidth:</p>
                         </div>
                         <div class="scroll-height">scrollHeight:</div>
@@ -225,7 +225,7 @@
             </div>
         </div>
 
-    </section>
+    </div>
 
     <footer></footer>
 
