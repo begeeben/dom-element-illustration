@@ -1,0 +1,133 @@
+// @function bounce-position($distance, $percentage, $bounce-factor, $bounce-count:5)
+
+@mixin bounce-out($attr, $start, $end, $bounce-factor: 0.5, $bounce-count: 50)
+	$f: $bounce-factor
+
+	// the denominator when bounce count is infinite
+	// $t-all: -1 + 2 / (1 - sqrt($f))
+
+	// calculate denominator according to $bounce-count
+	$temp: 1
+	@for $j from 1 to $bounce-count + 1
+		$temp: $temp * sqrt($f)
+
+	$t-all: -1 + 2 * (1 - $temp) / (1 - sqrt($f))
+
+	$t: 1
+
+	$p: 100 / $t-all
+
+	$p-prev: 0
+
+	$d: $end - $start
+
+	$c: 0
+
+	$position: 0
+
+	0%
+		#{$attr}: #{$start}px
+
+	// from 1% to 100%
+	@for $i from 1 to 100
+		@if $p - $p-prev > 1 and $c < 2 * $bounce-count + 1
+			// when the current bounce cycle time > 1/100
+
+			@if $i > $p
+				// when current time > the direction reversed time (either starting to fall or bounce back)
+
+				@if $c % 2 == 0
+					// if starting to fall
+					#{$p}%
+						#{$attr}: #{$end}px
+
+					$d: $d * $f
+					$c: $c + 1
+					$t: $t * sqrt($f)
+					$p-prev: $p
+					$p: $p + 100 * $t / $t-all
+				@else
+					// if starting to bounce back
+					#{$p}%
+						#{$attr}: #{$end - $d}px
+					$c: $c + 1
+					$p-prev: $p
+					$p: $p + 100 * $t / $t-all
+
+				// @if $p < $i
+					// @debug $c
+
+			@if $c % 2 == 0
+				// if starting to fall
+				#{$i}%
+					#{$attr}: #{$end - $d + $d * ($i - $p-prev) * ($i - $p-prev) / (($p - $p-prev) * ($p - $p-prev))}px
+			@else
+				// if starting to bounce back
+				#{$i}%
+					#{$attr}: #{$end - $d + $d * ($p - $i) * ($p - $i) / (($p - $p-prev) * ($p - $p-prev))}px
+
+		@else
+			// when the current bounce cylce time < 1/100, no need to calculate positions
+			#{$i}%
+				#{$attr}: #{$end}px
+
+	100%
+		#{$attr}: #{$end}px
+
+
+@keyframes bounce-out
+	@include bounce-out(top, -500, 0)
+
+// http://www.exploratorium.edu/baseball/bouncing_balls.html
+
+@keyframes table-tennis-ball-bounce-out
+	@include bounce-out(top, -350, 0, .15)
+
+@keyframes baseball-bounce-out
+	@include bounce-out(top, -300, 0, .32)
+
+@keyframes golf-ball-bounce-out
+	@include bounce-out(top, -300, 0, .36)
+
+@keyframes foot-ball-bounce-out
+	@include bounce-out(top, -400, 0, .40)
+
+@keyframes tennis-ball-bounce-out
+	@include bounce-out(top, -500, 0, .49)
+
+@keyframes basketball-bounce-out
+	@include bounce-out(top, -450, 0, .56)
+
+.bounce-out
+	animation: bounce-out 8s linear
+	animation-fill-mode: forwards
+
+.table-tennis-ball-bounce-out
+	animation: table-tennis-ball-bounce-out 1.5s linear, fade-in 1.5s ease-in
+	animation-delay: .5s
+	animation-fill-mode: forwards
+
+.baseball-bounce-out
+	animation: baseball-bounce-out 3s linear, fade-in 1.5s ease-in
+	animation-delay: .5s
+	animation-fill-mode: forwards
+
+.golf-ball-bounce-out
+	animation: golf-ball-bounce-out 5s linear, fade-in 1.5s ease-in
+	animation-delay: .5s
+	animation-fill-mode: forwards
+
+.foot-ball-bounce-out
+	animation: foot-ball-bounce-out 7s linear, fade-in 1.5s ease-in
+	animation-delay: .5s
+	animation-fill-mode: forwards
+
+.tennis-ball-bounce-out
+	animation: tennis-ball-bounce-out 7s linear, fade-in 1.5s ease-in
+	animation-delay: .5s
+	animation-fill-mode: forwards
+
+.basketball-bounce-out
+	animation: basketball-bounce-out 5s linear, fade-in 1.5s ease-in
+	animation-delay: .5s
+	animation-fill-mode: forwards

@@ -33,11 +33,12 @@
         ... should've started this using Angular.js... damn...
 
     -->
-    <a href="https://github.com/begeeben/dom-element-illustration"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
     <header class="site-header">
         <h1>DOM Element Dimensions</h1>
     </header>
+
+    <a href="https://github.com/begeeben/dom-element-illustration"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
     <div class="main">
         <div class="settings-panel left">
@@ -55,10 +56,10 @@
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="basic-settings">
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-warning active">
+                        <label class="btn btn-warning">
                             <input type="radio" name="options" id="no-scroll">no scroll bar
                         </label>
-                        <label class="btn btn-warning">
+                        <label class="btn btn-warning active">
                             <input type="radio" name="options" id="vertical-scroll">vertical scroll bar
                         </label>
                         <label class="btn btn-warning">
@@ -118,8 +119,8 @@
                         </li>
                         <li>
                             <p class="settings-label content-color">height:</p>
-                            <input id="content-height-slider" type="range" min="120" max="300" value="120" step="1" oninput="updateContentDimension('height', this.value)" />
-                            <span id="content-height-value">120</span>px
+                            <input id="content-height-slider" type="range" min="120" max="300" value="300" step="1" oninput="updateContentDimension('height', this.value)" />
+                            <span id="content-height-value">300</span>px
                         </li>
                     </ul>
                 </div>
@@ -189,33 +190,33 @@
                             <p class="top-text">offsetTop:</p>
                             <div class="offset-top-marker"></div>
                         </div>
-                        <div class="scroll-left">
+                        <div class="scroll-left is-hidden">
                             <p class="left-text">scrollLeft:</p>
                             <div class="scroll-left-marker"></div>
                         </div>
-                        <div class="client-left">
+                        <div class="client-left is-hidden">
                             <p class="left-text">clientLeft:</p>
                             <div class="client-left-marker"></div>
                         </div>
-                        <div class="offset-left">
+                        <div class="offset-left is-hidden">
                             <p class="left-text">offsetLeft:</p>
                             <div class="offset-left-marker"></div>
                         </div>
-                        <div class="offset-width">
+                        <div class="offset-width is-hidden">
                             <p class="width-text">offsetWidth:</p>
                         </div>
                         <div class="offset-height">
                             <p class="border-marker">20px</p>
                             <p class="height-text">offsetHeight:</p>
                         </div>
-                        <div class="client-width">
+                        <div class="client-width is-hidden">
                             <p class="width-text">clientWidth:</p>
                         </div>
                         <div class="client-height">
                             <p class="padding-marker">20px</p>
                             <p class="height-text">clientHeight:</p>
                         </div>
-                        <div class="scroll-width">
+                        <div class="scroll-width is-hidden">
                             <p class="width-text">scrollWidth:</p>
                         </div>
                         <div class="scroll-height">scrollHeight:</div>
@@ -227,7 +228,17 @@
 
     </div>
 
-    <footer></footer>
+    <footer>
+        <h1 class="about-me">About</h1>
+        <ul class="contact">
+            <li class="contact-gmail table-tennis-ball-bounce-out"><a href="mailto:begeeben@gmail.com"><img src="images/googlemail-64.png" alt="" class="flip-inward"></a></li>
+            <li class="contact-github baseball-bounce-out"><a href="//github.com/begeeben"><img src="images/GitHub-Mark-64px.png" alt="" class="flip-inward"></a></li>
+            <li class="contact-wordpress golf-ball-bounce-out"><a href="//begeeben.wordpress.com"><img src="images/wordpress-logo-notext-rgb.png" alt="" class="flip-inward"></a></li>
+            <li class="contact-twitter foot-ball-bounce-out"><a href="//twitter.com/begeeben"><img src="images/Twitter_logo_blue.png" alt="" class="flip-inward"></a></li>
+            <li class="contact-linkedin tennis-ball-bounce-out"><a href=""><img src="images/InBug-60px-TM.png" alt="" class="flip-inward" class="flip-inward"></a></li>
+            <li class="contact-fb basketball-bounce-out"><a href="//www.facebook.com/yifan.liao"><img src="images/FB-f-Logo__blue_57.png" alt="" class="flip-inward"></a></li>
+        </ul>
+    </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- <script src="bower_components/jquery/dist/jquery.js"></script> -->
