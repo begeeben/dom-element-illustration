@@ -220,3 +220,16 @@ $('#horizontal-scroll').on('change', function() {
 		$('#view-properties .horizontal-group label').removeClass('active');
 	}
 });
+
+// $(document).on('scroll', function() {
+// 	// var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+// 	if ($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
+// 		$('.contact-gmail').addClass('table-tennis-ball-bounce-out');
+// 		$('.contact-github').addClass('baseball-bounce-out');
+// 		$('.contact-wordpress').addClass('golf-ball-bounce-out');
+// 		$('.contact-twitter').addClass('foot-ball-bounce-out');
+// 		$('.contact-linkedin').addClass('tennis-ball-bounce-out');
+// 		$('.contact-fb').addClass('basketball-bounce-out');
+// 	}
+// });

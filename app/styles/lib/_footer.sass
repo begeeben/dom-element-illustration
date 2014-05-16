@@ -1,0 +1,57 @@
+footer
+	position: relative
+	width: 100%
+	// border-bottom:
+	padding: 0 10%
+	margin-top: 2rem
+
+.contact
+	width: 100%
+	// margin: 5px auto 20px auto
+	margin-bottom: 20px
+	// padding: .5rem
+	border-bottom: solid 1px #aaa
+	text-align: justify
+
+	&:after
+		width: 100%
+		display: inline-block
+		content: ""
+		// visibility: hidden
+
+.contact > li
+	position: relative
+	display: inline-block
+	margin: .5rem .5rem 0 .5rem
+	opacity: 0
+	// top: -500px
+	// transform: rotateX(-80deg)
+
+	// -webkit-animation: bounce-out 8s linear 2s
+	// -moz-animation: bounce-out 8s linear 2s
+	// -o-animation: bounce-out 8s linear 2s
+
+@keyframes fade-in
+	from
+		opacity: 0
+	to
+		opacity: 1
+
+// .fade-in
+// 	animation: fade-in 1s linear
+// 	animation-fill-mode: forwards
+
+.about-me
+	position: absolute
+	right: 10%
+	font-weight: bold
+	font-size: 6rem
+	color: #ddd
+	letter-spacing: .2rem
+
+	&::after
+		position: absolute
+		top: -0.4rem
+		left: -0.7rem
+		content: "About"
+		color: #fafafa
